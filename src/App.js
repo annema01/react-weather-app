@@ -1,12 +1,15 @@
 import "./App.css"
 import Weather from "./Weather"
 import Infos from "./Infos"
+import Forcast from "./Forcast"
 
 function App() {
   return (
     <div className='App'>
       <Weather />
       <Infos />
+      <Forcast />
+
       <footer>
         © 2023 -{" "}
         <a
