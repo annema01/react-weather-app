@@ -2,3 +2,11 @@
   background-image: url("./medias/sunny.svg");
   background-repeat: no-repeat;
 }
+
+.Weather header {
+  background-color: var(--primary-color);
+}
+
+.Weather {
+  background: linear-gradient(180deg, #cff4ff 0%, var(--background-color) 100%);
+}

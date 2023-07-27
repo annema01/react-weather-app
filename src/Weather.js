@@ -4,7 +4,6 @@ export default function Weather() {
   return (
     <div className='Weather'>
       <div className='container'>
-        Weather App
         <header>
           <input
             type='search'
@@ -24,6 +23,7 @@ export default function Weather() {
         </button>
         <button className='btn'>°C</button>
         <button className='btn'>°F</button>
+
         <div className='current-weather'>
           <div className='degree'>24°</div>
           <div className='description'>Sunny</div>

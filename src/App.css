@@ -1,0 +1,11 @@
+:root {
+  --primary-color: #017eff;
+  --secondary-color: #01afff;
+  --background-color: #f2f9ff;
+  --white-color: #fcfefe;
+  --text-color: #3d3d3d;
+  --light-text-color: #9cc4dd;
+  --gradient: linear-gradient(270deg, #4ad4de 0%, #01aee4 100%);
+  --element-shadow: 0px 4px 4px rgba(0, 43, 87, 0.2);
+  --text-shadow: 0px 2px 3px 0px rgba(0, 43, 87, 0.2);
+}
