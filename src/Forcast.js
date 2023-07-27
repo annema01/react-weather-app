@@ -3,12 +3,12 @@ import "./Forcast.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { icon } from "@fortawesome/fontawesome-svg-core/import.macro"
 
-export default function Forcast() {
+export default function Forcast(props) {
   return (
     <div className='Forcast'>
       <div className='container'>
         <div className='row col '>
-          <div className='week-day col'>Wednesday</div>
+          <div className='week-day col'>{props.weekday}</div>
           <i className='bi bi-sun-fill col'></i>
           <div className='min-max col'>
             <div className='min'>16°</div>
@@ -18,16 +18,16 @@ export default function Forcast() {
             className='btn col'
             type='button'
             data-bs-toggle='collapse'
-            data-bs-target='#collapseExample'
+            data-bs-target={props.target}
             aria-expanded='false'
-            aria-controls='collapseExample'
+            aria-controls={props.collapse}
           >
             <i className='bi bi-caret-right-fill'></i>
           </button>
         </div>
         <div
           className='collapse'
-          id='collapseExample'
+          id={props.collapse}
         >
           <div className='card card-body'>
             <div className='row'>
