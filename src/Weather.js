@@ -3,7 +3,7 @@ import "./Weather.css"
 export default function Weather() {
   return (
     <div className='Weather'>
-      <div className='container-fluid '>
+      <div className='container'>
         Weather App
         <header>
           <input
@@ -29,7 +29,7 @@ export default function Weather() {
           <div className='description'>Sunny</div>
           <div className='feels-like'>Feels like 27°</div>
           <div className='min-max'>
-            16° |<span>25°</span>
+            16° | <strong>25°</strong>
           </div>
         </div>
         <div className='position'>
@@ -41,6 +41,9 @@ export default function Weather() {
           </div>
           <div className='time '>Friday, July 21, 12:13</div>
         </div>
+        <button className='btn'>
+          <i className='bi bi-caret-down-fill'></i>
+        </button>
       </div>
     </div>
   )
