@@ -19,18 +19,19 @@ export default function Weather() {
             </button>
           </form>
         </header>
-        <div>Updated Friday, July 21, 12:13</div>
-        <button className='btn'>
-          5 days <i className='bi bi-caret-down'></i>
+        <div className='updateTime'>Updated Friday, July 21, 12:13</div>
+        <button className='btn forcastAnchor'>
+          5 days
+          <i className='bi bi-caret-down'></i>
         </button>
         <button className='btn'>°C</button>
         <button className='btn'>°F</button>
 
-        <div className='current-weather'>
+        <div className='currentWeather'>
           <div className='degree'>24°</div>
           <div className='description'>Sunny</div>
-          <div className='feels-like'>Feels like 27°</div>
-          <div className='min-max'>
+          <div className='feelsLike'>Feels like 27°</div>
+          <div className='minMax'>
             16° | <strong>25°</strong>
           </div>
         </div>
