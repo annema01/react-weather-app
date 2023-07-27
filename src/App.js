@@ -30,6 +30,13 @@ function App() {
         >
           SheCodes React
         </a>
+        <div>
+          {" "}
+          Image by{" "}
+          <a href='https://www.freepik.com/free-vector/hand-drawn-weather-effects_18895324.htm#query=weather&position=0&from_view=search&track=sph'>
+            Freepik
+          </a>
+        </div>
       </footer>
     </div>
   )
