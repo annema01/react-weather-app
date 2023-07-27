@@ -6,7 +6,10 @@ import { icon } from "@fortawesome/fontawesome-svg-core/import.macro"
 export default function Forcast(props) {
   return (
     <div className='Forcast'>
-      <div className='container'>
+      <div
+        id='forcast'
+        className='container'
+      >
         <div className='row col '>
           <div className='week-day col'>{props.weekday}</div>
           <i className='bi bi-sun-fill col'></i>

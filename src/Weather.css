@@ -7,11 +7,11 @@ textarea {
   font-size: 16px;
 }
 
+/* END SECTION*/
+
 .Weather .container {
-  margin: 0;
   padding: 0 30px;
 }
-/* END SECTION*/
 .Weather .currentWeather {
   background-image: url("./medias/sunny.svg");
   background-repeat: no-repeat;
@@ -22,6 +22,7 @@ textarea {
 
 .Weather header {
   height: 115px;
+  width: 100vw;
   padding: 60px 30px 30px 30px;
   margin: 0 -30px;
   background-color: var(--primary-color);
@@ -57,22 +58,86 @@ textarea {
   text-shadow: var(--text-shadow);
 }
 
-.Weather .forcastAnchor {
+.Weather .forcastAnchor,
+.Weather .fahrenheit,
+.Weather .celsius {
   position: absolute;
-  top: 115px;
   right: 0;
-  background: var(--gradient);
-  border-radius: 0 0 0 4px;
-  color: var(--white-color);
-  font-size: 16px;
   font-weight: 700;
   display: flex;
-  align-items: flex-start;
+}
+
+.Weather .forcastAnchor {
+  border-radius: 0 0 0 4px;
+  box-shadow: var(--element-shadow);
   padding: 7px 5px 7px 14px;
+  font-size: 16px;
+  top: 115px;
+  align-items: flex-start;
+  color: var(--white-color);
+  background: var(--gradient);
+  z-index: 1;
+}
+
+.Weather .fahrenheit,
+.Weather .celsius {
+  font-size: 20px;
+  padding: 7px;
+  box-shadow: 0 0 0;
+  color: var(--text-color);
+  background: transparent;
+  border: none;
+  width: 40px;
+}
+.Weather .fahrenheit:hover,
+.Weather .celsius:hover,
+.Weather .active {
+  color: var(--primary-color);
+  background: var(--white-color);
+  box-shadow: var(--element-shadow);
+}
+
+.Weather .fahrenheit {
+  top: 199px;
+  z-index: 2;
+  border-radius: 4px 0 0 4px;
+}
+.Weather .fahrenheit:hover {
+  border-radius: 0 0 0 4px;
+}
+.Weather .celsius {
+  z-index: 2;
+  top: 156px;
+  border-radius: 0 0 0 4px;
 }
 
 .Weather .forcastAnchor i {
   font-size: 24px;
   line-height: 1;
   padding-left: 5px;
+}
+
+.btn:focus-visible {
+  color: var(--white-color);
+  background-color: var(--bs-btn-hover-bg);
+  border-color: transparent;
+  outline: 0;
+  box-shadow: 0;
+}
+
+.btn:hover {
+  color: var(--white-color);
+  background-color: var(--bs-btn-hover-bg);
+  border-color: transparent;
+  box-shadow: 0 0 0;
+}
+
+.btn-check:checked + .btn,
+:not(.btn-check) + .btn:active,
+.btn:first-child:active,
+.btn.active,
+.btn.show {
+  color: var(--light-text-color);
+  background-color: var(--bs-btn-active-bg);
+  border-color: transparent;
 }

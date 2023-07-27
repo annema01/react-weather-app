@@ -20,12 +20,15 @@ export default function Weather() {
           </form>
         </header>
         <div className='updateTime'>Updated Friday, July 21, 12:13</div>
-        <button className='btn forcastAnchor'>
+        <a
+          href='#forcast'
+          className='btn forcastAnchor'
+        >
           5 days
           <i className='bi bi-caret-down'></i>
-        </button>
-        <button className='btn'>°C</button>
-        <button className='btn'>°F</button>
+        </a>
+        <button className='celsius active'>°C</button>
+        <button className='fahrenheit '>°F</button>
 
         <div className='currentWeather'>
           <div className='degree'>24°</div>

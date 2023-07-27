@@ -18,3 +18,7 @@
 .App {
   font-family: var(--font-text);
 }
+
+.App .container {
+  margin: 0;
+}
