@@ -11,28 +11,28 @@ function App() {
       <Infos />
       <Forcast
         weekday='Wednesday'
-        collapse={1}
-        target='#1'
+        collapse='day1'
+        target='#day1'
       />
       <Forcast
         weekday='Thursday'
-        collapse={2}
-        target='#2'
+        collapse='day2'
+        target='#day2'
       />
       <Forcast
         weekday='Friday'
-        collapse={3}
-        target='#3'
+        collapse='day3'
+        target='#day3'
       />
       <Forcast
         weekday='Saturday'
-        collapse={4}
-        target='#4'
+        collapse='day4'
+        target='#day4'
       />
       <Forcast
         weekday='Sunday'
-        collapse={5}
-        target='#5'
+        collapse='day5'
+        target='#day5'
       />
 
       <Footer />
