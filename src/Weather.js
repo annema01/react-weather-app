@@ -5,19 +5,21 @@ export default function Weather() {
     <div className='Weather'>
       <div className='container'>
         <header>
-          <input
-            type='search'
-            placeholder='Enter a city..'
-            autoFocus='on'
-          />
-          <button
-            className='btn'
-            type='submit'
-          >
-            <i className='bi bi-search'></i>
-          </button>
-          <div>Updated Friday, July 21, 12:13</div>
+          <form>
+            <input
+              type='search'
+              placeholder='Enter a city..'
+              autoFocus='on'
+            />
+            <button
+              className='btn '
+              type='submit'
+            >
+              <i className='bi bi-search'></i>
+            </button>
+          </form>
         </header>
+        <div>Updated Friday, July 21, 12:13</div>
         <button className='btn'>
           5 days <i className='bi bi-caret-down'></i>
         </button>

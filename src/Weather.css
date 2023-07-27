@@ -1,12 +1,50 @@
+/*overwriting bootstrap section*/
+input,
+button,
+select,
+optgroup,
+textarea {
+  font-size: 16px;
+}
+
+.Weather .container {
+  margin: 0;
+  padding: 0 30px;
+}
+/* END SECTION*/
 .Weather .current-weather {
   background-image: url("./medias/sunny.svg");
   background-repeat: no-repeat;
 }
+.Weather {
+  background: linear-gradient(180deg, #cff4ff 0%, var(--background-color) 100%);
+}
 
 .Weather header {
+  height: 115px;
+  padding: 60px 30px 30px 30px;
+  margin: 0 -30px;
   background-color: var(--primary-color);
 }
 
-.Weather {
-  background: linear-gradient(180deg, #cff4ff 0%, var(--background-color) 100%);
+.Weather form {
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.1rem solid var(--light-text-color);
+}
+
+.Weather form input {
+  background-color: transparent;
+  border: none;
+}
+.Weather form button,
+.Weather hr,
+.Weather form input {
+  color: var(--light-text-color);
+}
+.Weather form input::placeholder {
+  font-style: italic;
+  color: var(--light-text-color);
 }
