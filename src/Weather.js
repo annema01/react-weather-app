@@ -28,13 +28,13 @@ export default function Weather() {
           <i className='bi bi-caret-down'></i>
         </a>
         <a
-          href='#'
+          href='/'
           className='celsius active'
         >
           °C
         </a>
         <a
-          href='#'
+          href='/'
           className='fahrenheit '
         >
           °F
@@ -51,7 +51,7 @@ export default function Weather() {
           <div className='positionTime'>
             <div className='position'>
               <a
-                href='#'
+                href='/'
                 className='btn geoButton'
               >
                 <i className='bi bi-geo-alt'></i>
