@@ -27,8 +27,18 @@ export default function Weather() {
           5 days
           <i className='bi bi-caret-down'></i>
         </a>
-        <button className='celsius active'>°C</button>
-        <button className='fahrenheit '>°F</button>
+        <a
+          href='#'
+          className='celsius active'
+        >
+          °C
+        </a>
+        <a
+          href='#'
+          className='fahrenheit '
+        >
+          °F
+        </a>
 
         <div className='currentWeather'>
           <div className='degree'>24°</div>
@@ -37,19 +47,26 @@ export default function Weather() {
           <div className='minMax'>
             16° | <strong>25°</strong>
           </div>
-        </div>
-        <div className='position'>
-          <div className='d-flex'>
-            <button className='btn'>
-              <i className='bi bi-geo-alt'></i>
-            </button>
-            <div className='city'>Lambton, CA</div>
+
+          <div className='positionTime'>
+            <div className='position'>
+              <a
+                href='#'
+                className='btn geoButton'
+              >
+                <i className='bi bi-geo-alt'></i>
+              </a>
+              <div className='city'>Lambton, CA</div>
+            </div>
+            <div className='time '>Friday, July 21, 12:13</div>
           </div>
-          <div className='time '>Friday, July 21, 12:13</div>
+          <a
+            href='#infos'
+            className='btn infosAnchor'
+          >
+            <i className='bi bi-caret-down-fill'></i>
+          </a>
         </div>
-        <button className='btn'>
-          <i className='bi bi-caret-down-fill'></i>
-        </button>
       </div>
     </div>
   )

@@ -9,16 +9,16 @@ textarea {
 
 /* END SECTION*/
 
-.Weather .container {
-  padding: 0 30px;
-}
-.Weather .currentWeather {
-  background-image: url("./medias/sunny.svg");
-  background-repeat: no-repeat;
-}
 .Weather {
   background: linear-gradient(180deg, #cff4ff 0%, var(--background-color) 100%);
 }
+
+.Weather .container {
+  padding: 0 30px;
+  height: 100vh;
+}
+
+/*  HEADER */
 
 .Weather header {
   height: 115px;
@@ -88,6 +88,7 @@ textarea {
   background: transparent;
   border: none;
   width: 40px;
+  text-decoration: none;
 }
 .Weather .fahrenheit:hover,
 .Weather .celsius:hover,
@@ -140,4 +141,82 @@ textarea {
   color: var(--light-text-color);
   background-color: var(--bs-btn-active-bg);
   border-color: transparent;
+}
+
+:focus-visible {
+  outline: -webkit-focus-ring-color auto 0px;
+}
+
+/* CURRENT WEATHER */
+.Weather .currentWeather {
+  background-image: url("./medias/sunny.svg");
+  background-repeat: no-repeat;
+  background-position: right 10px top 25px;
+  background-size: 75%;
+  height: 100vh;
+  padding-top: 200px;
+  text-shadow: var(--text-shadow);
+}
+
+.Weather .currentWeather .degree {
+  font-weight: 900;
+  font-family: var(--font-integer);
+  font-size: 160px;
+  line-height: 0.85;
+  margin-left: -9px;
+}
+.Weather .currentWeather .description {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.Weather .currentWeather .feelsLike,
+.Weather .currentWeather .minMax {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.Weather .currentWeather .infosAnchor {
+  margin: 0 auto;
+  display: block;
+  font-size: 26px;
+  line-height: 1;
+  padding-top: 80px;
+  text-shadow: var(--text-shadow);
+}
+
+.Weather .currentWeather i {
+  background-image: var(--gradient-vertical);
+  background-clip: text;
+  color: transparent;
+}
+
+/*  POSITION */
+.Weather .positionTime {
+  text-shadow: var(--text-shadow);
+}
+
+.Weather .position {
+  padding: 60px 0 0;
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.Weather .time {
+  font-style: italic;
+  color: var(--primary-color);
+  font-size: 10px;
+  padding-left: 30px;
+}
+
+.Weather .position a {
+  padding: 0 5px 0 0;
+}
+.Weather .position i {
+  font-size: 26px;
+  display: block;
 }

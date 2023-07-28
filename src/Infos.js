@@ -6,7 +6,10 @@ import { icon } from "@fortawesome/fontawesome-svg-core/import.macro"
 export default function Infos() {
   return (
     <div className='Infos'>
-      <div className='container'>
+      <div
+        id='infos'
+        className='container'
+      >
         <div className='row'>
           <div className='col-6'>
             <i className='bi bi-cloud-haze2'></i>
