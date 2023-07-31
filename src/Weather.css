@@ -149,7 +149,7 @@ textarea {
 
 /* CURRENT WEATHER */
 .Weather .currentWeather {
-  background-image: url("./medias/sunny.svg");
+  background-image: url("./background-images/sunny.svg");
   background-repeat: no-repeat;
   background-position: right 10px top 25px;
   background-size: 75%;

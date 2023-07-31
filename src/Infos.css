@@ -1,4 +1,61 @@
 .Infos {
   background: var(--background-color);
-  border-radius: 0% 0% 100% 100%;
+  background-size: 200%;
+  border-radius: 0 0 10em 10em;
+  min-height: 100vh;
+}
+
+.Infos .container {
+  text-align: center;
+  padding-inline: 45px;
+  margin-bottom: 25px;
+  padding-bottom: 45px;
+}
+
+.Infos .icon {
+  font-size: 3em;
+  background-image: var(--gradient-vertical);
+  background-clip: text;
+  color: transparent;
+  padding-bottom: 25px;
+}
+
+.Infos .title {
+  font-size: 15px;
+  font-weight: 700;
+  padding-bottom: 25px;
+  text-shadow: var(--text-shadow);
+}
+
+.Infos .data {
+  color: var(--secondary-color);
+  font-weight: 900;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  line-height: 1;
+  padding-bottom: 55px;
+  text-shadow: var(--text-shadow);
+}
+.Infos .text {
+  font-size: 20px;
+}
+.Infos .integer {
+  font-size: 35px;
+  font-family: var(--font-integer);
+}
+.Infos .unit {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--light-text-color);
+  padding: 2% 0 0 2%;
+}
+
+.Infos .windDirection {
+  transform: rotate(90deg);
+  height: 25px;
+  width: 25px;
+  padding: 3px;
+  fill: var(--light-text-color);
+  filter: drop-shadow(var(--text-shadow));
 }
