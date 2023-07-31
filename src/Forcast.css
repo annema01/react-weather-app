@@ -4,18 +4,12 @@
   box-shadow: var(--element-shadow);
   min-height: 85px;
   margin: 17px 40px;
-  display: flex;
   align-items: center;
+  display: flex;
 }
 
 .Forcast .container {
-  padding: 0 10px 0 20px;
-}
-
-.Forcast .forcastContent {
-  position: relative;
-  z-index: 2;
-  margin: 0;
+  padding: 0 20px;
 }
 
 .Forcast .weekDay {
@@ -44,8 +38,6 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  position: relative;
-  z-index: 5;
 }
 
 .Forcast .forcastCaret {
@@ -59,8 +51,8 @@
   position: absolute;
   z-index: -1;
   font-size: 66px;
-  right: 55%;
-  top: -20%;
+  bottom: -25%;
+  right: -50%;
 }
 
 .Forcast .yellow {
@@ -69,4 +61,39 @@
 
 .Forcast .blue {
   color: var(--light-text-color);
+}
+
+.Forcast .hiddenInfo {
+  padding: 60px 20px 20px 20px;
+  justify-content: center;
+  text-align: center;
+}
+
+.Forcast .hiddenInfo .title {
+  font-size: 10px;
+  font-weight: 700;
+  padding-bottom: 7px;
+}
+
+.Forcast .hiddenInfo .data {
+  color: var(--secondary-color);
+  font-weight: 700;
+  align-items: flex-start;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+.Forcast .hiddenInfo .text {
+  font-size: 12px;
+}
+.Forcast .hiddenInfo .integer {
+  font-size: 15px;
+  font-family: var(--font-integer);
+}
+
+.Forcast .hiddenInfo .unit {
+  color: var(--light-text-color);
+  font-size: 7px;
+  padding: 3% 0 0 2%;
 }

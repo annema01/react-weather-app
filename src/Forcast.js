@@ -10,36 +10,34 @@ export default function Forcast(props) {
         id='forcast'
         className='container'
       >
-        <div className='forcastContent row col '>
-          <i
-            className={
-              `icon ` + props.fill + ` bi bi-` + props.icon + `-fill col`
-            }
-          ></i>
-          <div className='weekDay col-7'>{props.weekday}</div>
+        <i
+          className={
+            `icon ` + props.fill + ` bi bi-` + props.icon + `-fill col`
+          }
+        ></i>
+        <div className='weekDay col-7'>{props.weekday}</div>
 
-          <div className='minMax col'>
-            <div className='min'>{props.min}°</div>
-            <strong className='max'>{props.max}°</strong>
-          </div>
-
-          <a
-            class='btn col'
-            data-toggle='collapse'
-            href={`#` + props.collapse}
-            role='button'
-            aria-expanded='false'
-            aria-controls={props.collapse}
-          >
-            <i className='forcastCaret bi bi-caret-right-fill'></i>
-          </a>
+        <div className='minMax col'>
+          <div className='min'>{props.min}°</div>
+          <strong className='max'>{props.max}°</strong>
         </div>
+
+        <a
+          class='btn col'
+          data-bs-toggle='collapse'
+          href={`#` + props.collapse}
+          role='button'
+          aria-expanded='false'
+          aria-controls={props.collapse}
+        >
+          <i className='forcastCaret bi bi-caret-right-fill'></i>
+        </a>
 
         <div
           className='collapse'
           id={props.collapse}
         >
-          <div className=''>
+          <div className='hiddenInfo '>
             <div className='row'>
               <div className='col-6'>
                 <div className='title'>Air quality</div>
