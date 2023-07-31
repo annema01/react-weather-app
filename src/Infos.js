@@ -4,6 +4,16 @@ import "./Infos.css"
 export default function Infos() {
   return (
     <div className='Infos'>
+      <svg
+        className='background'
+        height='1200'
+        width='100vw'
+      >
+        <circle
+          r='1120'
+          cx='50%'
+        />
+      </svg>
       <div
         id='infos'
         className='container'

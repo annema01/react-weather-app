@@ -1,15 +1,20 @@
 .Infos {
-  background: var(--background-color);
-  background-size: 200%;
-  border-radius: 0 0 10em 10em;
+  border-radius: 0 0 13em 13em;
   min-height: 100vh;
+}
+
+.Infos .background {
+  fill: var(--background-color);
+  position: absolute;
+  z-index: -2;
+  filter: drop-shadow(var(--text-shadow));
 }
 
 .Infos .container {
   text-align: center;
   padding-inline: 45px;
+  padding-block: 55px;
   margin-bottom: 25px;
-  padding-bottom: 45px;
 }
 
 .Infos .icon {
