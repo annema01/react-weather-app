@@ -1,4 +1,72 @@
 .Forcast {
   background-color: var(--background-color);
   border-radius: 4px;
+  box-shadow: var(--element-shadow);
+  min-height: 85px;
+  margin: 17px 40px;
+  display: flex;
+  align-items: center;
+}
+
+.Forcast .container {
+  padding: 0 10px 0 20px;
+}
+
+.Forcast .forcastContent {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+}
+
+.Forcast .weekDay {
+  display: flex;
+  align-items: center;
+  font-size: 23px;
+  font-weight: 700;
+}
+
+.Forcast .minMax {
+  font-family: var(--font-integer);
+  color: var(--primary-color);
+  font-size: 23px;
+  line-height: 1;
+  padding: 0 0 0 40px;
+}
+.Forcast .min,
+.Forcast .max {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.Forcast a {
+  padding: 0;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  z-index: 5;
+}
+
+.Forcast .forcastCaret {
+  font-size: 23px;
+  padding: 0;
+}
+
+.Forcast .icon {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  z-index: -1;
+  font-size: 66px;
+  right: 55%;
+  top: -20%;
+}
+
+.Forcast .yellow {
+  color: #f2d231;
+}
+
+.Forcast .blue {
+  color: var(--light-text-color);
 }

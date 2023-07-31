@@ -20,6 +20,7 @@
 
 .App {
   font-family: var(--font-text);
+  color: var(--text-color);
 }
 
 .App .container {

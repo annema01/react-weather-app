@@ -10,29 +10,36 @@ export default function Forcast(props) {
         id='forcast'
         className='container'
       >
-        <div className='row col '>
-          <div className='week-day col'>{props.weekday}</div>
-          <i className='bi bi-sun-fill col'></i>
-          <div className='min-max col'>
-            <div className='min'>16°</div>
-            <div className='max'>25°</div>
+        <div className='forcastContent row col '>
+          <i
+            className={
+              `icon ` + props.fill + ` bi bi-` + props.icon + `-fill col`
+            }
+          ></i>
+          <div className='weekDay col-7'>{props.weekday}</div>
+
+          <div className='minMax col'>
+            <div className='min'>{props.min}°</div>
+            <strong className='max'>{props.max}°</strong>
           </div>
-          <button
-            className='btn col'
-            type='button'
-            data-bs-toggle='collapse'
-            data-bs-target={props.target}
+
+          <a
+            class='btn col'
+            data-toggle='collapse'
+            href={`#` + props.collapse}
+            role='button'
             aria-expanded='false'
             aria-controls={props.collapse}
           >
-            <i className='bi bi-caret-right-fill'></i>
-          </button>
+            <i className='forcastCaret bi bi-caret-right-fill'></i>
+          </a>
         </div>
+
         <div
           className='collapse'
           id={props.collapse}
         >
-          <div className='card card-body'>
+          <div className=''>
             <div className='row'>
               <div className='col-6'>
                 <div className='title'>Air quality</div>

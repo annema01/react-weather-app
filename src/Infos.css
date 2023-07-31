@@ -1,6 +1,6 @@
 .Infos {
-  border-radius: 0 0 13em 13em;
   min-height: 100vh;
+  min-height: 100svh;
 }
 
 .Infos .background {
