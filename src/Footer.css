@@ -1,28 +1,29 @@
 .Footer {
   background-color: var(--primary-color);
   min-height: 195px;
-  color:var(--white-color);
+  color: var(--white-color);
   text-align: center;
   font-size: 12px;
-  padding-top: 40px ;
+  padding-top: 40px;
+  margin-top: 56px;
 }
 
 .Footer a {
-  color:var(--white-color);
+  color: var(--white-color);
   text-decoration: none;
   font-weight: 600;
 }
 
 .Footer a:hover {
-  color:var(--white-color);
-  color:var(--light-text-color);
+  color: var(--white-color);
+  color: var(--light-text-color);
 
 
 }
 
 .Footer hr {
   margin: 0;
-  color:var(--light-text-color);
+  color: var(--light-text-color);
   opacity: 0.1;
   border-top: 2px solid;
   padding-bottom: 20px;
@@ -31,4 +32,3 @@
 .Footer .imageCredits {
   padding-top: 10px;
 }
-

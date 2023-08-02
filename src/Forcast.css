@@ -4,19 +4,25 @@
   box-shadow: var(--element-shadow);
   min-height: 85px;
   margin: 17px 40px;
-  align-items: center;
+}
+
+.Forcast .notCollapsable {
   display: flex;
+  align-items: center;
+
 }
 
 .Forcast .container {
-  padding: 0 20px;
+  padding: 20px 20px;
+  width: 90%;
+  margin: auto;
 }
 
 .Forcast .weekDay {
-  display: flex;
-  align-items: center;
   font-size: 23px;
   font-weight: 700;
+  position: relative;
+  z-index: 1;
 }
 
 .Forcast .minMax {
@@ -24,8 +30,11 @@
   color: var(--primary-color);
   font-size: 23px;
   line-height: 1;
-  padding: 0 0 0 40px;
+  padding: 0 10px 0 0;
+  position: relative;
+  z-index: 1;
 }
+
 .Forcast .min,
 .Forcast .max {
   display: flex;
@@ -42,17 +51,15 @@
 
 .Forcast .forcastCaret {
   font-size: 23px;
-  padding: 0;
+
 }
 
 .Forcast .icon {
-  display: flex;
-  align-items: center;
-  position: absolute;
-  z-index: -1;
+  position: relative;
+  z-index: 0;
+  opacity: 0.9;
   font-size: 66px;
-  bottom: -25%;
-  right: -50%;
+  line-height: 1;
 }
 
 .Forcast .yellow {
@@ -70,7 +77,7 @@
 }
 
 .Forcast .hiddenInfo .title {
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 700;
   padding-bottom: 7px;
 }
@@ -85,15 +92,38 @@
 }
 
 .Forcast .hiddenInfo .text {
-  font-size: 12px;
+  font-size: 14px;
 }
+
 .Forcast .hiddenInfo .integer {
-  font-size: 15px;
+  font-size: 17px;
   font-family: var(--font-integer);
 }
 
 .Forcast .hiddenInfo .unit {
   color: var(--light-text-color);
-  font-size: 7px;
-  padding: 3% 0 0 2%;
+  font-size: 10px;
+  padding: 0.5% 0 0 0.5%;
+}
+
+.Forcast .windDirection {
+  transform: rotate(90deg);
+  height: 23px;
+  width: 23px;
+  padding: 3px;
+  fill: var(--light-text-color);
+  filter: drop-shadow(var(--text-shadow));
+}
+
+/* btn bootstrap overwrite */
+
+.Forcast .btn,
+.Forcast .btn:focus {
+  color: var(--text-color);
+
+}
+
+.Forcast .btn:hover {
+  color: var(--light-text-color);
+  border-color: transparent;
 }

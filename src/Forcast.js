@@ -1,7 +1,6 @@
 import React from "react"
 import "./Forcast.css"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { icon } from "@fortawesome/fontawesome-svg-core/import.macro"
+
 
 export default function Forcast(props) {
   return (
@@ -10,32 +9,41 @@ export default function Forcast(props) {
         id='forcast'
         className='container'
       >
-        <i
-          className={
-            `icon ` + props.fill + ` bi bi-` + props.icon + `-fill col`
-          }
-        ></i>
-        <div className='weekDay col-7'>{props.weekday}</div>
 
-        <div className='minMax col'>
-          <div className='min'>{props.min}°</div>
-          <strong className='max'>{props.max}°</strong>
+
+
+        <div className="notCollapsable">
+
+          <div className='weekDay col-6'>{ props.weekday }</div>
+          <i
+            className={
+              `icon ` + props.fill + ` bi bi-` + props.icon + `-fill col`
+            }
+          ></i>
+          <div className='minMax col' >
+            <div className='min'>{ props.min }°</div>
+            <strong className='max'>{ props.max }°</strong>
+          </div>
+          <div>
+            <a
+              class='btn col'
+              data-bs-toggle='collapse'
+              href={ `#` + props.collapse }
+              role='button'
+              aria-expanded='false'
+              aria-controls={ props.collapse }
+            >
+              <i className='bi bi-caret-right-fill forcastCaret'></i>
+            </a>
+          </div>
         </div>
 
-        <a
-          class='btn col'
-          data-bs-toggle='collapse'
-          href={`#` + props.collapse}
-          role='button'
-          aria-expanded='false'
-          aria-controls={props.collapse}
-        >
-          <i className='forcastCaret bi bi-caret-right-fill'></i>
-        </a>
+
+        {/*  Collapsable element  */ }
 
         <div
           className='collapse'
-          id={props.collapse}
+          id={ props.collapse }
         >
           <div className='hiddenInfo '>
             <div className='row'>
@@ -70,9 +78,15 @@ export default function Forcast(props) {
               <div className='col-6'>
                 <div className='title'>Wind speed</div>
                 <div className='data integer'>
-                  <FontAwesomeIcon
-                    icon={icon({ name: "location-arrow", style: "solid" })}
-                  />
+
+                  <svg
+                    className='windDirection'
+                    xmlns='http://www.w3.org/2000/svg'
+                    viewBox='0 0 448 512'
+                  >
+                    <path d='M429.6 92.1c4.9-11.9 2.1-25.6-7-34.7s-22.8-11.9-34.7-7l-352 144c-14.2 5.8-22.2 20.8-19.3 35.8s16.1 25.8 31.4 25.8H224V432c0 15.3 10.8 28.4 25.8 31.4s30-5.1 35.8-19.3l144-352z' />
+                  </svg>
+
                   6.7 <span className='unit'>m/s</span>
                 </div>
               </div>
