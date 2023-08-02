@@ -5,6 +5,7 @@ export default function Footer() {
   return (
     <div className='Footer'>
       <footer>
+        <hr />
         © 2023 -{" "}
         <a
           href='https://github.com/annema01/react-weather-app'
@@ -23,6 +24,7 @@ export default function Footer() {
         >
           Anne-Marie Robert
         </a>{" "}
+        <br />
         with{" "}
         <a
           href='https://www.shecodes.io/'
@@ -32,8 +34,7 @@ export default function Footer() {
         >
           SheCodes React
         </a>
-        <div>
-          {" "}
+        <div className="imageCredits">
           Images by{" "}
           <a
             href='https://www.freepik.com/free-vector/hand-drawn-weather-effects_18895324.htm#query=weather&position=0&from_view=search&track=sph'
