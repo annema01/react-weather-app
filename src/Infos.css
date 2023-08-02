@@ -1,6 +1,7 @@
 .Infos {
   min-height: 100vh;
   min-height: 100svh;
+  margin-bottom: 60px;
 }
 
 .Infos .background {
@@ -42,13 +43,16 @@
   padding-bottom: 55px;
   text-shadow: var(--text-shadow);
 }
+
 .Infos .text {
   font-size: 20px;
 }
+
 .Infos .integer {
   font-size: 35px;
   font-family: var(--font-integer);
 }
+
 .Infos .unit {
   font-size: 15px;
   font-weight: 500;
