@@ -9,6 +9,9 @@
   position: absolute;
   z-index: -2;
   filter: drop-shadow(var(--text-shadow));
+  height: 1200px;
+  width: 100vw;
+  width: 100svw;
 }
 
 .Infos .container {
@@ -71,4 +74,10 @@
   padding: 3px;
   fill: var(--light-text-color);
   filter: drop-shadow(var(--text-shadow));
+}
+
+@media (min-width:576px) {
+  .Infos .background {
+    display: none;
+  }
 }

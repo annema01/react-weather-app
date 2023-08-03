@@ -6,8 +6,6 @@ export default function Infos() {
     <div className='Infos'>
       <svg
         className='background'
-        height='1200'
-        width='100vw'
       >
         <circle
           r='1120'

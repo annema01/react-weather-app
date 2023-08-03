@@ -24,6 +24,7 @@ textarea {
 .Weather header {
   height: 115px;
   width: 100vw;
+  width: 100svw;
   padding: 60px 30px 30px 30px;
   margin: 0 -30px;
   background-color: var(--primary-color);
@@ -43,7 +44,6 @@ textarea {
 }
 
 .Weather form button,
-.Weather hr,
 .Weather form input {
   color: var(--light-text-color);
 }
@@ -62,12 +62,19 @@ textarea {
 }
 
 .Weather .forcastAnchor,
-.Weather .fahrenheit,
-.Weather .celsius {
+.Weather .fahrenheitSm,
+.Weather .celsiusSm {
   position: absolute;
   right: 0;
-  font-weight: 700;
   display: flex;
+}
+
+.Weather .forcastAnchor,
+.Weather .fahrenheitSm,
+.Weather .celsiusSm,
+.Weather .fahrenheit,
+.Weather .celsius {
+  font-weight: 700;
 }
 
 .Weather .forcastAnchor {
@@ -95,6 +102,8 @@ textarea {
   z-index: 1;
 }
 
+.Weather .fahrenheitSm,
+.Weather .celsiusSm,
 .Weather .fahrenheit,
 .Weather .celsius {
   font-size: 20px;
@@ -107,6 +116,8 @@ textarea {
   text-decoration: none;
 }
 
+.Weather .fahrenheitSm:hover,
+.Weather .celsiusSm:hover,
 .Weather .fahrenheit:hover,
 .Weather .celsius:hover,
 .Weather .active {
@@ -115,17 +126,17 @@ textarea {
   box-shadow: var(--element-shadow);
 }
 
-.Weather .fahrenheit {
+.Weather .fahrenheitSm {
   top: 199px;
   z-index: 2;
   border-radius: 4px 0 0 4px;
 }
 
-.Weather .fahrenheit:hover {
+.Weather .fahrenheitSm:hover {
   border-radius: 0 0 0 4px;
 }
 
-.Weather .celsius {
+.Weather .celsiusSm {
   z-index: 2;
   top: 156px;
   border-radius: 0 0 0 4px;
@@ -235,4 +246,62 @@ textarea {
 .Weather .position i {
   font-size: 26px;
   display: block;
+}
+
+@media (max-width: 575px) {
+
+  .Weather .fahrenheit,
+  .Weather .celsius {
+    display: none;
+  }
+}
+
+@media (min-width: 576px) {
+  .Weather {
+    background: none;
+    height: 912px;
+  }
+
+  .Weather .forcastAnchor,
+  .Weather .scrollUp,
+  .Weather .fahrenheitSm,
+  .Weather .celsiusSm {
+    display: none;
+  }
+
+  .Weather .container {
+    padding: 0;
+  }
+
+  .Weather .fahrenheit,
+  .Weather .celsius {
+    color: var(--white-color);
+    margin: 0 0 0 10px;
+  }
+
+  .Weather .active {
+    color: var(--primary-color);
+    border-radius: 4px;
+  }
+
+  .Weather .unitButtons {
+    margin: 0 0 0 30px;
+
+  }
+
+  .Weather header {
+    height: 85px;
+    max-width: 1040px;
+    padding: 24px 88px 15px;
+    border-radius: 10px 10px 0 0;
+    background-color: var(--primary-color);
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .Weather .content {
+    padding: 0 88px 15px;
+  }
+
 }

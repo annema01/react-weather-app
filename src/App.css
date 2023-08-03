@@ -18,11 +18,29 @@
   /*Installed weight : 400 500 700 900*/
 }
 
+.col-md-7,
+.col-md-5 {
+  padding: 0;
+}
+
 .App {
   font-family: var(--font-text);
   color: var(--text-color);
 }
 
+
 .App .container {
   margin: 0;
+}
+
+@media (min-width: 576px) {
+  .App .noFooter {
+    margin: 64px auto 0;
+    max-width: 1040px;
+    background: linear-gradient(180deg, #cff4ff 0%, var(--background-color) 100%);
+    border-radius: 10px 10px 4px 4px;
+  }
+
+
+
 }
