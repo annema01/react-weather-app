@@ -7,7 +7,7 @@ export default function Forcast(props) {
     <div className='Forcast'>
 
       <div className='container'>
-        <a class='btn notCollapsable'
+        <a class='notCollapsable'
           data-bs-toggle='collapse'
           href={ `#` + props.collapse }
           role='button'
@@ -25,17 +25,10 @@ export default function Forcast(props) {
             <div className='min'>{ props.min }°</div>
             <strong className='max'>{ props.max }°</strong>
           </div>
-          <div>
-            <a
-              class='btn col'
-              data-bs-toggle='collapse'
-              href={ `#` + props.collapse }
-              role='button'
-              aria-expanded='false'
-              aria-controls={ props.collapse }
-            >
-              <i className='bi bi-caret-right-fill forcastCaret'></i>
-            </a>
+          <div className="">
+
+            <i className='bi bi-caret-right-fill forcastCaret '></i>
+
           </div>
         </a>
         {/*  Collapsable element  */ }

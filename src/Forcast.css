@@ -7,11 +7,25 @@
   margin: 15px 40px;
 }
 
+.Forcast a {
+  text-decoration: none;
+  color: var(--text-color);
+}
 
+/* Animation to add to forcast's carets when aria-expanded is true */
+.Forcast .caretTransform {
+  transform: rotate(90deg);
+  transition: all 0.1s ease-out;
+
+}
 
 .Forcast .notCollapsable {
   display: flex;
   align-items: center;
+}
+
+.Forcast btn:hover {
+  color: var(--text-color);
 }
 
 .Forcast .container {
@@ -21,11 +35,13 @@
 .Forcast .weekDay {
   font-size: 20px;
   justify-content: center;
-  font-weight: 700;
   position: relative;
   z-index: 1;
   padding-left: 10px;
+  font-weight: 700;
 }
+
+
 
 .Forcast .shortText {
   display: none;
