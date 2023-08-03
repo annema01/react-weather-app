@@ -41,11 +41,13 @@ textarea {
   background-color: transparent;
   border: none;
 }
+
 .Weather form button,
 .Weather hr,
 .Weather form input {
   color: var(--light-text-color);
 }
+
 .Weather form input::placeholder {
   font-style: italic;
   color: var(--light-text-color);
@@ -80,6 +82,19 @@ textarea {
   z-index: 1;
 }
 
+.Weather .scrollUp {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  border-radius: 4px 0 0 0;
+  box-shadow: var(--element-shadow);
+  padding: 4px 7px;
+  font-size: 16px;
+  color: var(--white-color);
+  background: var(--gradient);
+  z-index: 1;
+}
+
 .Weather .fahrenheit,
 .Weather .celsius {
   font-size: 20px;
@@ -91,6 +106,7 @@ textarea {
   width: 40px;
   text-decoration: none;
 }
+
 .Weather .fahrenheit:hover,
 .Weather .celsius:hover,
 .Weather .active {
@@ -104,9 +120,11 @@ textarea {
   z-index: 2;
   border-radius: 4px 0 0 4px;
 }
+
 .Weather .fahrenheit:hover {
   border-radius: 0 0 0 4px;
 }
+
 .Weather .celsius {
   z-index: 2;
   top: 156px;
@@ -134,8 +152,8 @@ textarea {
   box-shadow: 0 0 0;
 }
 
-.btn-check:checked + .btn,
-:not(.btn-check) + .btn:active,
+.btn-check:checked+.btn,
+:not(.btn-check)+.btn:active,
 .btn:first-child:active,
 .btn.active,
 .btn.show {
@@ -155,7 +173,7 @@ textarea {
   background-position: right 10px top 25px;
   background-size: 75%;
   height: 100vh;
-  padding-top: 200px;
+  padding-top: 170px;
   text-shadow: var(--text-shadow);
 }
 
@@ -166,11 +184,14 @@ textarea {
   line-height: 0.85;
   margin-left: -9px;
 }
+
 .Weather .currentWeather .description {
   font-weight: 600;
   font-size: 16px;
   line-height: 1.5;
+  padding: 15px 0 0;
 }
+
 .Weather .currentWeather .feelsLike,
 .Weather .currentWeather .minMax {
   font-weight: 500;
@@ -178,14 +199,7 @@ textarea {
   line-height: 1.5;
 }
 
-.Weather .currentWeather .infosAnchor {
-  margin: 0 auto;
-  display: block;
-  font-size: 26px;
-  line-height: 1;
-  padding-top: 40px;
-  text-shadow: var(--text-shadow);
-}
+
 
 .Weather .currentWeather i {
   background-image: var(--gradient-vertical);
@@ -199,7 +213,7 @@ textarea {
 }
 
 .Weather .position {
-  padding: 45px 0 0;
+  padding: 65px 0 0;
   display: flex;
   align-items: center;
   font-size: 30px;
@@ -217,6 +231,7 @@ textarea {
 .Weather .position a {
   padding: 0 5px 0 0;
 }
+
 .Weather .position i {
   font-size: 26px;
   display: block;

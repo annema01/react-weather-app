@@ -18,6 +18,10 @@
   margin-bottom: 25px;
 }
 
+.Infos .hidden {
+  display: none;
+}
+
 .Infos .icon {
   font-size: 3em;
   background-image: var(--gradient-vertical);

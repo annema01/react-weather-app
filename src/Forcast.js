@@ -6,7 +6,7 @@ export default function Forcast(props) {
   return (
     <div className='Forcast'>
       <div
-        id='forcast'
+
         className='container'
       >
 

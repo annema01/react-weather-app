@@ -4,7 +4,7 @@ export default function Weather() {
   return (
     <div className='Weather'>
       <div className='container'>
-        <header>
+        <header id="scrollUp">
           <form>
             <input
               type='search'
@@ -20,6 +20,13 @@ export default function Weather() {
           </form>
         </header>
         <div className='updateTime'>Updated Friday, July 21, 12:13</div>
+        {/* Buttons top */ }
+        <a
+          href='#scrollUp'
+          className='btn scrollUp'
+        >
+          <i className='bi bi-caret-up-fill'></i>
+        </a>
         <a
           href='#forcast'
           className='btn forcastAnchor'
@@ -60,12 +67,7 @@ export default function Weather() {
             </div>
             <div className='time '>Friday, July 21, 12:13</div>
           </div>
-          <a
-            href='#infos'
-            className='btn infosAnchor'
-          >
-            <i className='bi bi-caret-down-fill'></i>
-          </a>
+
         </div>
       </div>
     </div>
