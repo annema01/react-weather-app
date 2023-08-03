@@ -26,7 +26,7 @@
 }
 
 .Infos .icon {
-  font-size: 3em;
+  font-size: 48px;
   background-image: var(--gradient-vertical);
   background-clip: text;
   color: transparent;
@@ -77,7 +77,58 @@
 }
 
 @media (min-width:576px) {
+  .Infos {
+    min-height: 0;
+    margin-bottom: 60px;
+  }
+
   .Infos .background {
     display: none;
+  }
+
+  .Infos .container {
+    padding-inline: 0px 90px;
+    padding-block: 150px 0;
+    margin-bottom: 0px;
+  }
+
+  .Infos .icon {
+    font-size: 30px;
+    background-image: var(--gradient-vertical);
+    background-clip: text;
+    color: transparent;
+    padding-bottom: 25px;
+  }
+
+  .Infos .title {
+    font-size: 11px;
+    font-weight: 700;
+    padding-bottom: 20px;
+  }
+
+  .Infos .data {
+    line-height: 1;
+    padding-bottom: 25px;
+
+  }
+
+  .Infos .text {
+    font-size: 12px;
+  }
+
+  .Infos .integer {
+    font-size: 20px;
+
+  }
+
+  .Infos .unit {
+    font-size: 10px;
+    padding: 2% 0 0 2%;
+  }
+
+  .Infos .windDirection {
+    height: 20px;
+    width: 20px;
+    padding: 3px;
   }
 }

@@ -304,4 +304,31 @@ textarea {
     padding: 0 88px 15px;
   }
 
+  .Weather .position {
+    font-size: 42px;
+  }
+
+  .Weather .time {
+    font-size: 15px;
+    padding-top: 10px;
+  }
+
+  .Weather .currentWeather .degree {
+    font-size: 205px;
+    line-height: 0.85;
+    margin-left: -9px;
+  }
+
+  .Weather .currentWeather .description {
+    font-size: 21px;
+    line-height: 1.5;
+    padding: 15px 0 0;
+  }
+
+  .Weather .currentWeather .feelsLike,
+  .Weather .currentWeather .minMax {
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 1.5;
+  }
 }

@@ -3,26 +3,41 @@
   border-radius: 4px;
   box-shadow: var(--element-shadow);
   min-height: 85px;
-  margin: 17px 40px;
+  max-width: 310px;
+  margin: 17px auto;
 }
+
+
 
 .Forcast .notCollapsable {
   display: flex;
   align-items: center;
-
 }
 
 .Forcast .container {
   padding: 20px 20px;
-  width: 90%;
-  margin: auto;
+  margin: 0 auto;
+  width: 300;
+
+
+
 }
 
 .Forcast .weekDay {
-  font-size: 23px;
+  font-size: 20px;
+  justify-content: center;
   font-weight: 700;
   position: relative;
   z-index: 1;
+  padding-left: 10px;
+}
+
+.Forcast .shortText {
+  display: none;
+}
+
+.Forcast .fullText {
+  display: inline;
 }
 
 .Forcast .minMax {
@@ -44,9 +59,7 @@
 .Forcast a {
   padding: 0;
   line-height: 1;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+
 }
 
 .Forcast .forcastCaret {
@@ -126,4 +139,20 @@
 .Forcast .btn:hover {
   color: var(--light-text-color);
   border-color: transparent;
+}
+
+@media (min-width: 576px) {
+  .Forcast .fullText {
+    display: none;
+  }
+
+  .Forcast .shortText {
+    display: inline;
+  }
+
+  .Forcast {
+    min-height: 95px;
+    max-width: 60px;
+    margin: 17px 40px;
+  }
 }

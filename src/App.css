@@ -23,6 +23,10 @@
   padding: 0;
 }
 
+.row {
+  flex-shrink: 1;
+}
+
 .App {
   font-family: var(--font-text);
   color: var(--text-color);

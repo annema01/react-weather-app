@@ -5,16 +5,17 @@ import "./Forcast.css"
 export default function Forcast(props) {
   return (
     <div className='Forcast'>
-      <div
 
-        className='container'
-      >
+      <div className='container'>
+        <a class='btn notCollapsable'
+          data-bs-toggle='collapse'
+          href={ `#` + props.collapse }
+          role='button'
+          aria-expanded='false'
+          aria-controls={ props.collapse }>
 
-
-
-        <div className="notCollapsable">
-
-          <div className='weekDay col-6'>{ props.weekday }</div>
+          <div className='weekDay col-6 fullText'>{ props.weekday }</div>
+          <div className='weekDay col-6 shortText'>{ props.weekdayAbbr }</div>
           <i
             className={
               `icon ` + props.fill + ` bi bi-` + props.icon + `-fill col`
@@ -36,11 +37,8 @@ export default function Forcast(props) {
               <i className='bi bi-caret-right-fill forcastCaret'></i>
             </a>
           </div>
-        </div>
-
-
+        </a>
         {/*  Collapsable element  */ }
-
         <div
           className='collapse'
           id={ props.collapse }
