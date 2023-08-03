@@ -93,7 +93,7 @@ export default function Infos() {
           </div>
           <div className='col-6 col-md-3'>
             <i className='icon bi bi-clouds'></i>
-            <div className='title'>Overcast clouds</div>
+            <div className='title'>Clouds</div>
             <div className='data integer'>
               75<span className='unit'>%</span>
             </div>

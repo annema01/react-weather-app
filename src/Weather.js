@@ -3,8 +3,9 @@ import "./Weather.css"
 export default function Weather() {
   return (
     <div className='Weather'>
+
       <div className='container'>
-        <header id="scrollUp row">
+        <header id="scrollUp">
           <form className="col-md-5">
             <input
               type='search'
@@ -36,12 +37,7 @@ export default function Weather() {
         <div className="content">
           <div className='updateTime'>Updated Friday, July 21, 12:13</div>
           {/* Buttons top */ }
-          <a
-            href='#scrollUp'
-            className='btn scrollUp'
-          >
-            <i className='bi bi-caret-up-fill'></i>
-          </a>
+
           <a
             href='#forcast'
             className='btn forcastAnchor'

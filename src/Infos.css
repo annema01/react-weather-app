@@ -93,7 +93,7 @@
   }
 
   .Infos .icon {
-    font-size: 30px;
+    font-size: 24px;
     background-image: var(--gradient-vertical);
     background-clip: text;
     color: transparent;
@@ -101,9 +101,9 @@
   }
 
   .Infos .title {
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 700;
-    padding-bottom: 20px;
+    padding-bottom: 14px;
   }
 
   .Infos .data {
@@ -117,7 +117,7 @@
   }
 
   .Infos .integer {
-    font-size: 20px;
+    font-size: 17px;
 
   }
 

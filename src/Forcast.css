@@ -3,8 +3,8 @@
   border-radius: 4px;
   box-shadow: var(--element-shadow);
   min-height: 85px;
-  max-width: 310px;
-  margin: 17px auto;
+  min-width: 310px;
+  margin: 15px 40px;
 }
 
 
@@ -16,11 +16,6 @@
 
 .Forcast .container {
   padding: 20px 20px;
-  margin: 0 auto;
-  width: 300;
-
-
-
 }
 
 .Forcast .weekDay {

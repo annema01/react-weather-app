@@ -6,11 +6,11 @@ import Footer from "./Footer"
 
 function App() {
   return (
-    <div className='App'>
+    <div className='App g-0'>
       <div className="row g-0 noFooter">
         <div className=" col-md-7"><Weather /></div>
         <div className=" col-md-5"><Infos />
-          <div className="row">
+          <div className="row g-0 forcastSection">
             <Forcast
               weekday='Wednesday'
               weekdayAbbr='Wed.'
@@ -60,6 +60,12 @@ function App() {
           </div>
         </div>
       </div>
+      <a
+        href='#scrollUp'
+        className='btn scrollUp'
+      >
+        <i className='bi bi-caret-up-fill'></i>
+      </a>
       <Footer />
     </div>
   )

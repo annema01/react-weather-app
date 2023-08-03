@@ -18,10 +18,7 @@
   /*Installed weight : 400 500 700 900*/
 }
 
-.col-md-7,
-.col-md-5 {
-  padding: 0;
-}
+
 
 .row {
   flex-shrink: 1;
@@ -37,6 +34,25 @@
   margin: 0;
 }
 
+.App .scrollUp {
+  border-radius: 4px 0 0 0;
+  box-shadow: var(--element-shadow);
+  padding: 4px 7px;
+  font-size: 16px;
+  color: var(--white-color);
+  background: var(--gradient);
+  z-index: 2;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+.App .forcastSection {
+  display: flex;
+  justify-content: center;
+  margin: 0 40px;
+}
+
 @media (min-width: 576px) {
   .App .noFooter {
     margin: 64px auto 0;
@@ -45,6 +61,9 @@
     border-radius: 10px 10px 4px 4px;
   }
 
+  .App .scrollUp {
+    display: none;
+  }
 
 
 }

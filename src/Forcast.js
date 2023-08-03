@@ -44,7 +44,7 @@ export default function Forcast(props) {
           id={ props.collapse }
         >
           <div className='hiddenInfo '>
-            <div className='row'>
+            <div className='row g-0'>
               <div className='col-6'>
                 <div className='title'>Air quality</div>
                 <div className='data text'>
@@ -58,7 +58,7 @@ export default function Forcast(props) {
                 </div>
               </div>
             </div>
-            <div className='row'>
+            <div className='row g-0'>
               <div className='col-6'>
                 <div className='title'>Humidity</div>
                 <div className='data integer'>
@@ -72,7 +72,7 @@ export default function Forcast(props) {
                 </div>
               </div>
             </div>
-            <div className='row'>
+            <div className='row g-0'>
               <div className='col-6'>
                 <div className='title'>Wind speed</div>
                 <div className='data integer'>
@@ -95,7 +95,7 @@ export default function Forcast(props) {
                 </div>
               </div>
             </div>
-            <div className='row'>
+            <div className='row g-0'>
               <div className='col-6'>
                 <div className='title'>Wind gust</div>
                 <div className='data integer'>

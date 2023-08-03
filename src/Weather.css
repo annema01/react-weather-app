@@ -89,18 +89,7 @@ textarea {
   z-index: 1;
 }
 
-.Weather .scrollUp {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  border-radius: 4px 0 0 0;
-  box-shadow: var(--element-shadow);
-  padding: 4px 7px;
-  font-size: 16px;
-  color: var(--white-color);
-  background: var(--gradient);
-  z-index: 1;
-}
+
 
 .Weather .fahrenheitSm,
 .Weather .celsiusSm,
@@ -132,8 +121,13 @@ textarea {
   border-radius: 4px 0 0 4px;
 }
 
+
 .Weather .fahrenheitSm:hover {
   border-radius: 0 0 0 4px;
+}
+
+.Weather .fahrenheit:hover {
+  border-radius: 4px;
 }
 
 .Weather .celsiusSm {
@@ -263,7 +257,6 @@ textarea {
   }
 
   .Weather .forcastAnchor,
-  .Weather .scrollUp,
   .Weather .fahrenheitSm,
   .Weather .celsiusSm {
     display: none;
