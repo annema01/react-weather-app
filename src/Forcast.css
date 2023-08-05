@@ -37,7 +37,7 @@
   justify-content: center;
   position: relative;
   z-index: 1;
-  padding-left: 10px;
+  padding: 0 0 0 10px;
   font-weight: 700;
 }
 
@@ -75,7 +75,6 @@
 
 .Forcast .forcastCaret {
   font-size: 23px;
-
 }
 
 .Forcast .icon {
@@ -103,7 +102,7 @@
 .Forcast .hiddenInfo .title {
   font-size: 12px;
   font-weight: 700;
-  padding-bottom: 7px;
+  padding: 0 0 7px 0;
 }
 
 .Forcast .hiddenInfo .data {
@@ -112,7 +111,7 @@
   align-items: flex-start;
   display: flex;
   justify-content: center;
-  padding-bottom: 20px;
+  padding: 0 0 20px 0;
 }
 
 .Forcast .hiddenInfo .text {
@@ -152,8 +151,68 @@
   border-color: transparent;
 }
 
+.smHidden {
+  display: none;
+}
+
 @media (min-width: 576px) {
-  .Forcast .fullText {
+  .Forcast {
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    min-height: 600px;
+    max-width: 71px;
+    min-width: 0;
+    margin: 0;
+  }
+
+  .Forcast .container {
+    padding: 8px;
+    background-color: var(--background-color);
+    border-radius: 4px;
+    box-shadow: var(--element-shadow);
+    min-height: 100px;
+  }
+
+  .Forcast .hiddenInfo,
+  .collapsing .show {
+    background-color: var(--background-color);
+    border-radius: 4px;
+    box-shadow: var(--element-shadow);
+    margin: 15px 0 0;
+    min-width: 394px;
+    height: 377px;
+  }
+
+  .Forcast .day2 {
+    position: relative;
+    left: -80px;
+  }
+
+  .Forcast .day3 {
+    position: relative;
+    left: -160px;
+  }
+
+  .Forcast .day4 {
+    position: relative;
+    left: -240px;
+  }
+
+  .Forcast .day5 {
+    position: relative;
+    left: -320px;
+  }
+
+  .Forcast .notCollapsable {
+    display: block;
+    margin: 27px 0 0;
+    text-align: right;
+
+  }
+
+  .Forcast .fullText,
+  .Forcast .smVersion {
     display: none;
   }
 
@@ -161,9 +220,38 @@
     display: inline;
   }
 
-  .Forcast {
-    min-height: 95px;
-    max-width: 60px;
-    margin: 17px 40px;
+  .Forcast .lgVersion {
+    display: flex;
+    justify-content: center;
   }
+
+  .Forcast .weekDay {
+    font-size: 18px;
+  }
+
+  .Forcast .minMax {
+    font-size: 14px;
+    text-align: right;
+    padding: 10px 0 12px;
+  }
+
+  .Forcast .min,
+  .Forcast .max {
+    display: inline;
+  }
+
+  .Forcast .icon {
+    font-size: 43px;
+    position: absolute;
+    top: 660px;
+    text-align: left;
+  }
+
+  .Forcast .forcastCaret {
+    font-size: 20px;
+    text-align: center;
+    padding: 0;
+
+  }
+
 }

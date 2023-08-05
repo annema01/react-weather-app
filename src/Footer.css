@@ -4,7 +4,7 @@
   color: var(--white-color);
   text-align: center;
   font-size: 12px;
-  padding-top: 40px;
+  padding: 40px 0 0;
 }
 
 .Footer a {
@@ -25,7 +25,7 @@
   color: var(--light-text-color);
   opacity: 0.1;
   border-top: 2px solid;
-  padding-bottom: 20px;
+  padding: 0 0 20px 0;
 }
 
 .Footer .imageCredits {
@@ -36,7 +36,8 @@
   .Footer {
     background-color: transparent;
     color: var(--text-color);
-    margin-top: 20px;
+    margin: 0;
+    padding: 20px;
   }
 
   .Footer a {
