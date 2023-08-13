@@ -65,6 +65,11 @@ textarea {
   font-style: italic;
   color: var(--light-text-color);
   text-shadow: var(--text-shadow);
+  display: flex;
+}
+
+.Weather .formatedTime {
+  padding: 0 0 0 3px;
 }
 
 .Weather .forcastAnchor,

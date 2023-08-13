@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import FormatedDate from "./FormatedDate"
+
 import "./Weather.css"
 import axios from "axios"
 import img from "./backgroundImages/fog.svg"
@@ -9,6 +11,8 @@ export default function Weather() {
   const [ weatherData, setWeatherData ] = useState(null);
   function handleResponse(response) {
     console.log(response.data);
+
+
     setWeatherData({
       temperature: response.data.main.temp,
       feelsLike: response.data.main.feels_like,
@@ -16,7 +20,9 @@ export default function Weather() {
       max: response.data.main.temp_max,
       city: response.data.name,
       country: response.data.sys.country,
-      description: response.data.weather[ 0 ].description
+      description: response.data.weather[ 0 ].description,
+      date: new Date(response.data.dt * 1000),
+
 
     });
 
@@ -59,7 +65,7 @@ export default function Weather() {
           </header>
 
           <div className="content">
-            <div className='updateTime'>Updated Friday, July 21, 12:13</div>
+            <div className='updateTime'>Updated<span className="formatedTime"><FormatedDate date={ weatherData.date } /></span></div>
             {/* Buttons top */ }
 
             <a
@@ -101,7 +107,7 @@ export default function Weather() {
                   </a>
                   <div className='city'>{ weatherData.city }, { weatherData.country }</div>
                 </div>
-                <div className='time '>Friday, July 21, 12:13</div>
+                <div className='time '></div>
               </div>
             </div>
           </div>
@@ -111,8 +117,8 @@ export default function Weather() {
 
   } else {
     const apiKey = "f3009e4852fa0a079dab291dabf020c4";
-    let city = "Lambton";
-    let country = "CA";
+    let city = "Paris";
+    let country = "FR";
     let unit = "metric";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${apiKey}&units=${unit}`
     axios.get(apiUrl).then(handleResponse);
