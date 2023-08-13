@@ -15,6 +15,9 @@ textarea {
 
 .Weather .container {
   padding: 0 30px;
+}
+
+.Weather .content {
   height: 100vh;
   height: 100svh;
 }
@@ -262,8 +265,6 @@ textarea {
 
   .Weather .container {
     padding: 0;
-    height: 95svh;
-    height: 95vh;
   }
 
   .Weather .fahrenheit,
@@ -294,7 +295,9 @@ textarea {
   }
 
   .Weather .content {
+    height: 700px;
     padding: 0 88px 15px;
+
   }
 
   .Weather .position {

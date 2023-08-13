@@ -1,3 +1,4 @@
+import axios from "axios"
 import "./App.css"
 import Weather from "./Weather"
 import Infos from "./Infos"
