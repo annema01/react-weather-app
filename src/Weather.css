@@ -176,10 +176,10 @@ textarea {
 
 /* CURRENT WEATHER */
 .Weather .currentWeather {
-  background-image: url("./background-images/sunny.svg");
+  /* background-image: url("./background-images/sunny.svg");
   background-repeat: no-repeat;
   background-position: right 10px top 25px;
-  background-size: 75%;
+  background-size: 75%;*/
   height: 100vh;
   padding-top: 170px;
   text-shadow: var(--text-shadow);
@@ -198,6 +198,11 @@ textarea {
   font-size: 16px;
   line-height: 1.5;
   padding: 15px 0 0;
+}
+
+.Weather .currentWeather .description::first-letter {
+  text-transform: capitalize;
+
 }
 
 .Weather .currentWeather .feelsLike,
