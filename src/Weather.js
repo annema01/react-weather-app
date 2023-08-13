@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import FormatedDate from "./FormatedDate"
-
 import "./Weather.css"
 import axios from "axios"
-import img from "./backgroundImages/fog.svg"
+import sunny from "./backgroundImages/sunny.svg"
+
+
+
 
 
 export default function Weather() {
+
   const [ ready, setReady ] = useState(false);
   const [ weatherData, setWeatherData ] = useState(null);
   function handleResponse(response) {
@@ -87,32 +90,39 @@ export default function Weather() {
             >
               °F
             </a>
-            <img className="background " src={ img } alt="Sunny" />
-
-            <div className='currentWeather'>
-              <div className='degree'>{ Math.round(weatherData.temperature) }°</div>
-              <div className='description'>{ weatherData.description } </div>
-              <div className='feelsLike'>Feels like { Math.round(weatherData.feelsLike) }°</div>
-              <div className='minMax'>
-                { Math.round(weatherData.min) }° | <strong>{ Math.round(weatherData.max) }°</strong>
-              </div>
-
-              <div className='positionTime'>
-                <div className='position'>
-                  <a
-                    href='/'
-                    className='btn geoButton'
-                  >
-                    <i className='bi bi-geo-alt'></i>
-                  </a>
-                  <div className='city'>{ weatherData.city }, { weatherData.country }</div>
+            <div>
+              <div
+                className='currentWeather'
+                style={ {
+                  backgroundImage: `url(${sunny})`,
+                  backgroundSize: "75%",
+                  backgroundRepeat: 'no-repeat',
+                  backgroundPosition: "right 10px top 25px",
+                } }>
+                <div className='degree'>{ Math.round(weatherData.temperature) }°</div>
+                <div className='description'>{ weatherData.description } </div>
+                <div className='feelsLike'>Feels like { Math.round(weatherData.feelsLike) }°</div>
+                <div className='minMax'>
+                  { Math.round(weatherData.min) }° | <strong>{ Math.round(weatherData.max) }°</strong>
                 </div>
-                <div className='time '></div>
+
+                <div className='positionTime'>
+                  <div className='position'>
+                    <a
+                      href='/'
+                      className='btn geoButton'
+                    >
+                      <i className='bi bi-geo-alt'></i>
+                    </a>
+                    <div className='city'>{ weatherData.city }, { weatherData.country }</div>
+                  </div>
+                  <div className='time '>Timezone time</div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </div >
     )
 
   } else {
