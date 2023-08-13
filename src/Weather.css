@@ -32,6 +32,8 @@ textarea {
   padding: 60px 30px 30px 30px;
   margin: 0 -30px;
   background-color: var(--primary-color);
+  position: relative;
+  z-index: 1;
 }
 
 .Weather form {
@@ -175,14 +177,20 @@ textarea {
 }
 
 /* CURRENT WEATHER */
+.Weather .background {
+  position: absolute;
+  z-index: 0;
+  top: 175px;
+  left: 100px;
+  max-width: 400px;
+}
+
 .Weather .currentWeather {
-  /* background-image: url("./background-images/sunny.svg");
-  background-repeat: no-repeat;
-  background-position: right 10px top 25px;
-  background-size: 75%;*/
   height: 100vh;
   padding-top: 170px;
   text-shadow: var(--text-shadow);
+  position: relative;
+  z-index: 1;
 }
 
 .Weather .currentWeather .degree {

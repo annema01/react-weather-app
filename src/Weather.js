@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Weather.css"
 import axios from "axios"
-
+import img from "./backgroundImages/fog.svg"
 
 
 export default function Weather() {
@@ -26,7 +26,6 @@ export default function Weather() {
   if (ready) {
     return (
       <div className='Weather'>
-
 
         <div className='container'>
           <header id="scrollUp">
@@ -58,6 +57,7 @@ export default function Weather() {
               </a>
             </div>
           </header>
+
           <div className="content">
             <div className='updateTime'>Updated Friday, July 21, 12:13</div>
             {/* Buttons top */ }
@@ -81,6 +81,7 @@ export default function Weather() {
             >
               °F
             </a>
+            <img className="background " src={ img } alt="Sunny" />
 
             <div className='currentWeather'>
               <div className='degree'>{ Math.round(weatherData.temperature) }°</div>

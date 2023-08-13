@@ -49,6 +49,8 @@
 
 .App .forcastSection {
   margin: 0 0 100px;
+  position: relative;
+  z-index: 1;
 }
 
 @media (min-width: 768px) {

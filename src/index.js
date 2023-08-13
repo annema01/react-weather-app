@@ -4,9 +4,7 @@ import "bootstrap/dist/css/bootstrap.css"
 // Put any other imports below so that CSS from your
 // components takes precedence over default styles.
 import "bootstrap-icons/font/bootstrap-icons.css"
-
 import "./index.css"
-
 import "bootstrap/dist/js/bootstrap.bundle.min.js"
 
 import App from "./App"
