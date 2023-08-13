@@ -32,19 +32,13 @@
   padding-top: 10px;
 }
 
-@media (min-width: 576px) {
-  .Footer {
-    background-color: transparent;
-    color: var(--text-color);
+@media (min-width: 768px) {
+  .Footer .content {
     margin: 0;
     padding: 20px;
   }
 
-  .Footer a {
-    color: var(--text-color);
-  }
-
-  .Footer hr {
-    display: none;
+  .Footer {
+    border-radius: 0 0 10px 10px;
   }
 }

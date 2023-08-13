@@ -1,7 +1,7 @@
 .Infos {
   min-height: 100vh;
   min-height: 100svh;
-  margin-bottom: 60px;
+  margin: 0 0 60px;
 }
 
 .Infos .background {
@@ -16,9 +16,8 @@
 
 .Infos .container {
   text-align: center;
-  padding-inline: 45px;
-  padding-block: 55px;
-  margin-bottom: 25px;
+  padding: 55px 45px;
+  margin: 0 auto 25px;
 }
 
 .Infos .hidden {
@@ -76,10 +75,10 @@
   filter: drop-shadow(var(--text-shadow));
 }
 
-@media (min-width:576px) {
+@media (min-width:768px) {
   .Infos {
     min-height: 0;
-    margin-bottom: 60px;
+    margin: 0 0 60px 0;
   }
 
   .Infos .background {
@@ -87,9 +86,8 @@
   }
 
   .Infos .container {
-    padding-inline: 0px 90px;
-    padding-block: 150px 0;
-    margin-bottom: 0px;
+    margin: 0;
+    padding: 0 60px;
   }
 
   .Infos .icon {
@@ -103,13 +101,12 @@
   .Infos .title {
     font-size: 10px;
     font-weight: 700;
-    padding-bottom: 14px;
+    padding: 0 0 14px 0;
   }
 
   .Infos .data {
     line-height: 1;
-    padding-bottom: 25px;
-
+    padding: 0 0 25px;
   }
 
   .Infos .text {

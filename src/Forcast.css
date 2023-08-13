@@ -78,10 +78,8 @@
 }
 
 .Forcast .icon {
-  position: relative;
-  z-index: 0;
   opacity: 0.9;
-  font-size: 66px;
+  font-size: 56px;
   line-height: 1;
 }
 
@@ -155,103 +153,12 @@
   display: none;
 }
 
-@media (min-width: 576px) {
+.Forcast .lgVersion {
+  display: none;
+}
+
+@media (min-width: 768px) {
   .Forcast {
-    background-color: transparent;
-    border-radius: 0;
-    box-shadow: none;
-    min-height: 600px;
-    max-width: 71px;
-    min-width: 0;
-    margin: 0;
+    margin: 0 40px 20px 0;
   }
-
-  .Forcast .container {
-    padding: 8px;
-    background-color: var(--background-color);
-    border-radius: 4px;
-    box-shadow: var(--element-shadow);
-    min-height: 100px;
-  }
-
-  .Forcast .hiddenInfo,
-  .collapsing .show {
-    background-color: var(--background-color);
-    border-radius: 4px;
-    box-shadow: var(--element-shadow);
-    margin: 15px 0 0;
-    min-width: 394px;
-    height: 377px;
-  }
-
-  .Forcast .day2 {
-    position: relative;
-    left: -80px;
-  }
-
-  .Forcast .day3 {
-    position: relative;
-    left: -160px;
-  }
-
-  .Forcast .day4 {
-    position: relative;
-    left: -240px;
-  }
-
-  .Forcast .day5 {
-    position: relative;
-    left: -320px;
-  }
-
-  .Forcast .notCollapsable {
-    display: block;
-    margin: 27px 0 0;
-    text-align: right;
-
-  }
-
-  .Forcast .fullText,
-  .Forcast .smVersion {
-    display: none;
-  }
-
-  .Forcast .shortText {
-    display: inline;
-  }
-
-  .Forcast .lgVersion {
-    display: flex;
-    justify-content: center;
-  }
-
-  .Forcast .weekDay {
-    font-size: 18px;
-  }
-
-  .Forcast .minMax {
-    font-size: 14px;
-    text-align: right;
-    padding: 10px 0 12px;
-  }
-
-  .Forcast .min,
-  .Forcast .max {
-    display: inline;
-  }
-
-  .Forcast .icon {
-    font-size: 43px;
-    position: absolute;
-    top: 660px;
-    text-align: left;
-  }
-
-  .Forcast .forcastCaret {
-    font-size: 20px;
-    text-align: center;
-    padding: 0;
-
-  }
-
 }

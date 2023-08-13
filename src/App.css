@@ -48,17 +48,19 @@
 }
 
 .App .forcastSection {
-  display: flex;
-  justify-content: center;
-  margin: 0 40px;
+  margin: 0 0 100px;
 }
 
-@media (min-width: 576px) {
-  .App .noFooter {
-    margin: 64px auto 0;
+@media (min-width: 768px) {
+  .App {
+    border-radius: 10px;
+  }
+
+  .App .contentAll {
+    margin: 64px auto 50px;
     max-width: 1040px;
     background: linear-gradient(180deg, #cff4ff 0%, var(--background-color) 100%);
-    border-radius: 10px 10px 4px 4px;
+    border-radius: 10px 10px 0 0;
   }
 
   .App .scrollUp {
@@ -66,8 +68,7 @@
   }
 
   .App .forcastSection {
-    margin: 120px 40px 0 0;
-    justify-content: space-between;
+    margin: 150px 0 0;
   }
 
 }

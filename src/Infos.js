@@ -17,21 +17,21 @@ export default function Infos() {
         className='container'
       >
         <div className='row'>
-          <div className='col-6 col-md-3'>
+          <div className='col-6 col-md-4'>
             <i className='icon bi bi-cloud-haze2'></i>
             <div className='title'>Air quality</div>
             <div className='data text'>
               Very poor<span className='unit'></span>
             </div>
           </div>
-          <div className='col-6 col-md-3'>
+          <div className='col-6 col-md-4'>
             <i className='icon bi bi-droplet'></i>
             <div className='title'>Humidity</div>
             <div className='data integer'>
               25<span className='unit'>%</span>
             </div>
           </div>
-          <div className='col-6 col-md-3'>
+          <div className='col-6 col-md-4'>
             <i className='icon bi bi-wind'></i>
             <div className='title'>Wind speed</div>
             <div className='data integer'>
@@ -47,7 +47,7 @@ export default function Infos() {
               6.7<span className='unit'>m/s</span>
             </div>
           </div>
-          <div className='col-6 col-md-3'>
+          <div className='col-6 col-md-4'>
             <i className='icon bi bi-tornado'></i>
             <div className='title'>Wind gust</div>
             <div className='data integer'>
@@ -56,7 +56,7 @@ export default function Infos() {
           </div>
 
 
-          <div className='col-6 col-md-3'>
+          <div className='col-6 col-md-4'>
             <i className='icon bi bi-umbrella'></i>
             <div className='title'>Rain</div>
             {/* ALTERNATIVE SNOW */ }
@@ -70,7 +70,7 @@ export default function Infos() {
               1.5<span className='unit'>mm</span>
             </div>
           </div>
-          <div className='col-6 col-md-3'>
+          <div className='col-6 col-md-4'>
             <i className='icon bi bi-arrow-down-up'></i>
 
             <div className='title'>Pressure</div>
@@ -78,7 +78,7 @@ export default function Infos() {
               1050<span className='unit'>hPa</span>
             </div>
           </div>
-          <div className='col-6 col-md-3'>
+          <div className='col-6 col-md-4'>
             <i className='icon bi bi-eye'></i>
             <div className='title'>Visibility</div>
             <div className='data integer'>
@@ -91,21 +91,21 @@ export default function Infos() {
               </div>
             </div>
           </div>
-          <div className='col-6 col-md-3'>
+          <div className='col-6 col-md-4'>
             <i className='icon bi bi-clouds'></i>
             <div className='title'>Clouds</div>
             <div className='data integer'>
               75<span className='unit'>%</span>
             </div>
           </div>
-          <div className='col-6 col-md-3'>
+          <div className='col-6 col-md-4'>
             <i className='icon bi bi-sunrise'></i>
             <div className='title'>Sunrise</div>
             <div className='data text'>
               05:25<span className='unit'></span>
             </div>
           </div>
-          <div className='col-6 col-md-3'>
+          <div className='col-6 col-md-4'>
             <i className='icon bi bi-sunset'></i>
             <div className='title'>Sunset</div>
             <div className='data text'>

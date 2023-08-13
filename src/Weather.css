@@ -241,7 +241,7 @@ textarea {
   display: block;
 }
 
-@media (max-width: 575px) {
+@media (max-width: 767px) {
 
   .Weather .fahrenheit,
   .Weather .celsius {
@@ -249,10 +249,9 @@ textarea {
   }
 }
 
-@media (min-width: 576px) {
+@media (min-width: 768px) {
   .Weather {
     background: none;
-    height: 912px;
   }
 
   .Weather .forcastAnchor,
@@ -263,6 +262,8 @@ textarea {
 
   .Weather .container {
     padding: 0;
+    height: 95svh;
+    height: 95vh;
   }
 
   .Weather .fahrenheit,
