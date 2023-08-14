@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import FormatedDate from "./FormatedDate"
 import "./Weather.css"
 import axios from "axios"
-import sunny from "./backgroundImages/sunny.svg"
+import wind from "./backgroundImages/wind.svg"
 
 
 
@@ -94,7 +94,7 @@ export default function Weather() {
               <div
                 className='currentWeather'
                 style={ {
-                  backgroundImage: `url(${sunny})`,
+                  backgroundImage: `url(${wind})`,
                   backgroundSize: "75%",
                   backgroundRepeat: 'no-repeat',
                   backgroundPosition: "right 10px top 25px",
