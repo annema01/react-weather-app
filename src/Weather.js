@@ -25,6 +25,7 @@ export default function Weather() {
       country: response.data.sys.country,
       description: response.data.weather[ 0 ].description,
       date: new Date(response.data.dt * 1000),
+      timezone: new Date((response.data.dt + response.data.timezone) * 1000).toLocaleString(),
 
 
     });
@@ -116,7 +117,7 @@ export default function Weather() {
                     </a>
                     <div className='city'>{ weatherData.city }, { weatherData.country }</div>
                   </div>
-                  <div className='time '>Timezone time</div>
+                  <div className='time '>{ weatherData.timezone } </div>
                 </div>
               </div>
             </div>
@@ -127,8 +128,8 @@ export default function Weather() {
 
   } else {
     const apiKey = "f3009e4852fa0a079dab291dabf020c4";
-    let city = "Paris";
-    let country = "FR";
+    let city = "Montreal";
+    let country = "CA";
     let unit = "metric";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${apiKey}&units=${unit}`
     axios.get(apiUrl).then(handleResponse);

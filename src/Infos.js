@@ -1,6 +1,8 @@
 import React, { useState } from "react"
+import FormatedHour from "./FormatedHour"
 import "./Infos.css"
 import axios from "axios"
+
 
 export default function Infos() {
 
@@ -25,7 +27,7 @@ export default function Infos() {
       pressure: response.data.main.pressure,
       visibility: response.data.visibility,
       clouds: response.data.clouds.all,
-      sunrise: response.data.sys.sunrise,
+      sunrise: new Date(response.data.sys.sunrise * 1000),
       sunset: response.data.sys.sunset,
       longitude: response.data.coord.lon,
       latitude: response.data.coord.lat,
@@ -77,6 +79,10 @@ export default function Infos() {
                 <div>
                   <svg
                     className='windDirection'
+                    style={ {
+                      transform: `rotate(${weatherInfo.windDeg}deg)`,
+                    }
+                    }
                     xmlns='http://www.w3.org/2000/svg'
                     viewBox='0 0 448 512'
                   >
@@ -90,7 +96,7 @@ export default function Infos() {
               <i className='icon bi bi-tornado'></i>
               <div className='title'>Wind gust</div>
               <div className='data integer'>
-                { weatherInfo.windGust }<span className='unit'>m/s</span>
+                { Math.round(weatherInfo.windGust) }<span className='unit'>m/s</span>
               </div>
             </div>
 
@@ -141,7 +147,7 @@ export default function Infos() {
               <i className='icon bi bi-sunrise'></i>
               <div className='title'>Sunrise</div>
               <div className='data text'>
-                { weatherInfo.sunrise }<span className='unit'></span>
+                <FormatedHour date={ weatherInfo.sunrise } /><span className='unit'></span>
               </div>
             </div>
             <div className='col-6 col-md-4'>
@@ -155,12 +161,12 @@ export default function Infos() {
           </div>
         </div>
         <div id="forcast"></div>
-      </div>
+      </div >
     )
   } else {
     const apiKey = "f3009e4852fa0a079dab291dabf020c4";
-    let city = "Paris";
-    let country = "FR";
+    let city = "Montreal";
+    let country = "CA";
     let unit = "metric";
 
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${apiKey}&units=${unit}`

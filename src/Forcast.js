@@ -9,7 +9,7 @@ export default function Forcast(props) {
 
       <div className='container'>
 
-        <a class='notCollapsable'
+        <a className='notCollapsable'
           data-bs-toggle='collapse'
           href={ `#` + props.collapse }
           role='button'
