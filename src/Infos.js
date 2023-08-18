@@ -8,11 +8,13 @@ export default function Infos() {
 
   const [ ready, setReady ] = useState(false);
   const [ weatherInfo, setWeatherInfo ] = useState(null);
-  // let lon = { weatherInfo.longitude };
-  // let lat = { weatherInfo.latitude };
-  // let apiUrlPollution = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${apiKey}`
-  // axios.get(apiUrlPollution).then(handleResponse);
+
   function handleResponse(response) {
+    // const apiKey = "f3009e4852fa0a079dab291dabf020c4";
+    // let lat = weatherInfo.latitude;
+    // let lon = weatherInfo.longitude;
+    // let apiUrlPollution = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${apiKey}`
+    // axios.get(apiUrlPollution).then(handleResponse);
 
 
 
@@ -22,21 +24,17 @@ export default function Infos() {
       windSpeed: response.data.wind.speed,
       windDeg: response.data.wind.deg,
       windGust: response.data.wind.gust,
-      rain: response.data.rain,
-      snow: response.data.snow,
+      // rain: response.data.rain.1h,
+      // snow: response.data.snow.1h,
       pressure: response.data.main.pressure,
       visibility: response.data.visibility,
       clouds: response.data.clouds.all,
       sunrise: new Date(response.data.sys.sunrise * 1000),
-      sunset: response.data.sys.sunset,
+      sunset: new Date(response.data.sys.sunset * 1000),
       longitude: response.data.coord.lon,
       latitude: response.data.coord.lat,
 
     });
-
-
-
-
     setReady(true);
 
   }
@@ -154,7 +152,7 @@ export default function Infos() {
               <i className='icon bi bi-sunset'></i>
               <div className='title'>Sunset</div>
               <div className='data text'>
-                { weatherInfo.sunset }<span className='unit'></span>
+                <FormatedHour date={ weatherInfo.sunset } /><span className='unit'></span>
               </div>
             </div>
 
