@@ -3,6 +3,7 @@ import FormatedDate from "./FormatedDate"
 import "./Weather.css"
 import axios from "axios"
 import wind from "./backgroundImages/wind.svg"
+import FormatedTimezone from "./FormatedTimezone";
 
 
 
@@ -25,6 +26,7 @@ export default function Weather() {
       country: response.data.sys.country,
       description: response.data.weather[ 0 ].description,
       date: new Date(response.data.dt * 1000),
+      timezone: response.data.timezone,
 
 
     });
@@ -116,7 +118,7 @@ export default function Weather() {
                     </a>
                     <div className='city'>{ weatherData.city }, { weatherData.country }</div>
                   </div>
-                  <div className='time '>will be timezone</div>
+                  <div className='time '><FormatedTimezone timezone={ weatherData.timezone } /></div>
                 </div>
               </div>
             </div>
@@ -127,8 +129,8 @@ export default function Weather() {
 
   } else {
     const apiKey = "f3009e4852fa0a079dab291dabf020c4";
-    let city = "Montreal";
-    let country = "CA";
+    let city = "Paris";
+    let country = "FR";
     let unit = "metric";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${apiKey}&units=${unit}`
     axios.get(apiUrl).then(handleResponse);
