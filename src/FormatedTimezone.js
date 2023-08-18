@@ -1,7 +1,8 @@
 import React from "react";
 export default function FormatedTimezone(props) {
     let timezoneShift = props.timezone;
-    let localDate = Date.now() - timezoneShift; //getTime() return milliseconds elapsed since jan 1 1970 00:00:00 UTC
+    let currectUTCDate = new Date();
+    let localDate = new Date(currectUTCDate.getTime() - timezoneShift); //getTime() return milliseconds elapsed since jan 1 1970 00:00:00 UTC
 
 
 
