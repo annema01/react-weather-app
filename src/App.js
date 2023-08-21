@@ -1,6 +1,5 @@
 import "./App.css"
 import Weather from "./Weather"
-import Infos from "./Infos"
 import Forcast from "./Forcast"
 import Footer from "./Footer"
 
@@ -9,7 +8,6 @@ function App() {
     <div className='App g-0'>
       <div className="row g-0 contentAll">
         <div className="col-md-7"><Weather />
-          <div className=""><Infos /></div>
         </div>
         <div className=" col-md-5 g-0 forcastSection">
           <Forcast

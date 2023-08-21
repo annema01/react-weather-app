@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Infos from "./Infos"
+
 import FormatedDate from "./FormatedDate"
 import "./Weather.css"
 import axios from "axios"
@@ -18,6 +20,7 @@ export default function Weather() {
 
 
     setWeatherData({
+      //current
       temperature: response.data.main.temp,
       feelsLike: response.data.main.feels_like,
       min: response.data.main.temp_min,
@@ -27,7 +30,21 @@ export default function Weather() {
       description: response.data.weather[ 0 ].description,
       date: new Date(response.data.dt * 1000),
       timezone: response.data.timezone,
-
+      //infos
+      airQuality: "airQua",
+      humidity: response.data.main.humidity,
+      windSpeed: response.data.wind.speed,
+      windDeg: response.data.wind.deg,
+      windGust: response.data.wind.gust,
+      // rain: response.data.rain.1h,
+      // snow: response.data.snow.1h,
+      pressure: response.data.main.pressure,
+      visibility: response.data.visibility,
+      clouds: response.data.clouds.all,
+      sunrise: new Date(response.data.sys.sunrise * 1000),
+      sunset: new Date(response.data.sys.sunset * 1000),
+      longitude: response.data.coord.lon,
+      latitude: response.data.coord.lat,
 
     });
 
@@ -124,6 +141,7 @@ export default function Weather() {
             </div>
           </div>
         </div>
+        <div className=""><Infos data={ weatherData } /></div>
       </div >
     )
 
