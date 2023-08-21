@@ -11,16 +11,15 @@ import FormatedTimezone from "./FormatedTimezone";
 
 
 
-export default function Weather() {
+export default function Weather(props) {
 
-  const [ ready, setReady ] = useState(false);
   const [ weatherData, setWeatherData ] = useState(null);
+  const [ city, setCity ] = useState(props.defaultCity);
+
   function handleResponse(response) {
-    console.log(response.data);
-
-
     setWeatherData({
       //current
+      ready: true,
       temperature: response.data.main.temp,
       feelsLike: response.data.main.feels_like,
       min: response.data.main.temp_min,
@@ -45,23 +44,35 @@ export default function Weather() {
       sunset: new Date(response.data.sys.sunset * 1000),
       longitude: response.data.coord.lon,
       latitude: response.data.coord.lat,
-
     });
-
-    setReady(true);
   }
 
-  if (ready) {
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+  function handleCityChange(event) {
+    setCity(event.target.value); // setCity to the value of the search field
+  }
+  function search() {
+    const apiKey = "f3009e4852fa0a079dab291dabf020c4";
+    let unit = "metric";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`
+    axios.get(apiUrl).then(handleResponse);
+  }
+
+  if (weatherData.ready) {
     return (
       <div className='Weather'>
 
         <div className='container'>
           <header id="scrollUp">
-            <form className="col-md-5">
+            <form onSubmit={ handleSubmit } className="col-md-5">
               <input
                 type='search'
-                placeholder='Enter a city..'
+                placeholder='Enter a city...'
                 autoFocus='on'
+                onChange={ handleCityChange }
               />
               <button
                 className='btn '
@@ -146,14 +157,8 @@ export default function Weather() {
     )
 
   } else {
-    const apiKey = "f3009e4852fa0a079dab291dabf020c4";
-    let city = "Paris";
-    let country = "FR";
-    let unit = "metric";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${apiKey}&units=${unit}`
-    axios.get(apiUrl).then(handleResponse);
-
     return "Loading..."
+    search();
   }
 
 }

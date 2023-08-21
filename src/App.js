@@ -7,7 +7,7 @@ function App() {
   return (
     <div className='App g-0'>
       <div className="row g-0 contentAll">
-        <div className="col-md-7"><Weather />
+        <div className="col-md-7"><Weather defaultCity="Montreal" />
         </div>
         <div className=" col-md-5 g-0 forcastSection">
           <Forcast
