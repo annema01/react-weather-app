@@ -1,9 +1,8 @@
 import React from "react";
 export default function FormatedTimezone(props) {
     let timezoneShift = props.timezone;
-    let currectUTCDate = new Date();
-    let localDate = new Date(currectUTCDate.getTime() - timezoneShift); //getTime() return milliseconds elapsed since jan 1 1970 00:00:00 UTC
-
+    let currentUTCDate = new Date();
+    let localDate = new Date(currentUTCDate.getTime() + timezoneShift * 1000); //getTime() return milliseconds elapsed since jan 1 1970 00:00:00 UTC
 
 
 
@@ -13,7 +12,7 @@ export default function FormatedTimezone(props) {
     let day = days[ localDate.getDay() ];
     let month = months[ localDate.getMonth() ];
     let date = localDate.getDate();
-    let hours = localDate.getHours();
+    let hours = localDate.getUTCHours();
     let minutes = localDate.getMinutes();
 
 
@@ -21,5 +20,19 @@ export default function FormatedTimezone(props) {
     console.log(hours);
     console.log(minutes);
 
-    return <div> { day }, { month } { date }, { hours }:{ minutes }</div>
+    if (minutes < 10) {
+        return (
+            < div >
+                { day }, { month } { date }, { hours }:0{ minutes }
+            </div>
+
+        );
+    } else {
+        return (
+            < div >
+                { day }, { month } { date }, { hours }:{ minutes }
+            </div>
+
+        );
+    }
 }

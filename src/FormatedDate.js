@@ -8,16 +8,25 @@ export default function FormatedDate(props) {
     let month = months[ props.date.getMonth() ];
     let date = props.date.getDate();
     let hours = props.date.getHours();
-    if (hours < 10) { return `0${hours}` };
+    //  if (hours < 10) { return `0${hours}` };
     let minutes = props.date.getMinutes();
-    if (minutes < 10) { return `0${minutes}` };
+    //if (minutes < 10) { return `0${minutes}` };
+
+    if (minutes < 10) {
+        return (
+            <div>
+                { " " } { day }, { month } { date }, { hours }:0{ minutes }
+            </div>
+
+        );
+    } else {
+        return (
+            <div>
+                { " " } { day }, { month } { date }, { hours }:{ minutes }
+            </div>
+
+        );
+    }
 
 
-
-    return (
-        <div>
-            { " " } { day }, { month } { date }, { hours }:{ minutes }
-        </div>
-
-    );
 }
