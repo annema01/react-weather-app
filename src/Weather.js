@@ -8,7 +8,7 @@ import wind from "./backgroundImages/wind.svg";
 import FormatedTimezone from "./FormatedTimezone";
 
 export default function Weather(props) {
-  const [weatherData, setWeatherData] = useState({ ready: false });
+  const [weatherData, setWeatherData] = useState({ ready: false }); // ready used to be a state but it was put as another data from the WeatherData
   const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
