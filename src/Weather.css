@@ -13,8 +13,8 @@ textarea {
   background: linear-gradient(180deg, #cff4ff 0%, var(--background-color) 100%);
 }
 
-.Weather .container {
-  padding: 0 30px;
+.Weather .containerWeather {
+  padding: 0 ;
 }
 
 .Weather .content {

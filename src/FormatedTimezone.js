@@ -16,9 +16,7 @@ export default function FormatedTimezone(props) {
     let minutes = localDate.getMinutes();
 
 
-    console.log(`timezone:${timezoneShift}`);
-    console.log(hours);
-    console.log(minutes);
+   
 
     if (minutes < 10) {
         return (

@@ -19,7 +19,7 @@ export default function Infos(props) {
       </svg>
       <div
         id='infos'
-        className='container'
+        className='containerInfos'
       >
         <div className='row'>
           <div className='col-6 col-md-4'>
@@ -111,14 +111,14 @@ export default function Infos(props) {
             <i className='icon bi bi-sunrise'></i>
             <div className='title'>Sunrise</div>
             <div className='data text'>
-              <FormatedHour date={ props.data.sunrise } /><span className='unit'></span>
+              <FormatedHour date={ props.data.sunrise } timezone={props.data.timezone}/><span className='unit'></span>
             </div>
           </div>
           <div className='col-6 col-md-4'>
             <i className='icon bi bi-sunset'></i>
             <div className='title'>Sunset</div>
             <div className='data text'>
-              <FormatedHour date={ props.data.sunset } /><span className='unit'></span>
+              <FormatedHour date={ props.data.sunset } timezone={props.data.timezone}/><span className='unit'></span>
             </div>
           </div>
 

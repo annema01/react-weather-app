@@ -12,7 +12,10 @@ export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
+    console.log(response.data);
+
     setWeatherData({
+      
       //current
       ready: true,
       temperature: response.data.main.temp,
@@ -40,6 +43,7 @@ export default function Weather(props) {
       longitude: response.data.coord.lon,
       latitude: response.data.coord.lat,
     });
+
   }
 
   function handleSubmit(event) {
@@ -59,7 +63,7 @@ export default function Weather(props) {
   if (weatherData.ready) {
     return (
       <div className="Weather">
-        <div className="container">
+        <div className="containerWeather">
           <header id="scrollUp">
             <form onSubmit={handleSubmit} className="col-md-5">
               <input
