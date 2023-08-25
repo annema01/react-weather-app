@@ -4,8 +4,11 @@ import Infos from "./Infos";
 import FormatedDate from "./FormatedDate";
 import "./Weather.css";
 import axios from "axios";
-import wind from "./backgroundImages/wind.svg";
 import FormatedTimezone from "./FormatedTimezone";
+import CurrentWeatherImg from "./CurrentWeatherImg";
+
+
+import wind from "./backgroundImages/wind.svg";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false }); // ready used to be a state but it was put as another data from the WeatherData
@@ -25,6 +28,7 @@ export default function Weather(props) {
       city: response.data.name,
       country: response.data.sys.country,
       description: response.data.weather[0].description,
+      icon: response.data.weather[0].icon,
       date: new Date(response.data.dt * 1000),
       timezone: response.data.timezone,
       //infos
@@ -106,15 +110,8 @@ export default function Weather(props) {
               °F
             </a>
             <div>
-              <div
-                className="currentWeather"
-                style={{
-                  backgroundImage: `url(${wind})`,
-                  backgroundSize: "75%",
-                  backgroundRepeat: "no-repeat",
-                  backgroundPosition: "right 10px top 25px",
-                }}
-              >
+              
+              <div className="currentWeather"  ><CurrentWeatherImg />
                 <div className="degree">
                   {Math.round(weatherData.temperature)}°
                 </div>
