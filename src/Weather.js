@@ -82,7 +82,6 @@ export default function Weather(props) {
   }
   let currentWeatherImgStyle = {
     backgroundImage: `url(/backgroundImages/${codeMapping[ weatherData.icon ]}.svg)`,
-    backgroundSize: "75 %",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "right 10px top 25px",
   }
@@ -104,7 +103,7 @@ export default function Weather(props) {
   if (weatherData.ready) {
     return (
       <div className="Weather">
-        <div className="containerWeather">
+        <div className="container content">
           <header id="scrollUp">
             <form onSubmit={ handleSubmit } className="col-md-5">
               <input
@@ -127,7 +126,7 @@ export default function Weather(props) {
             </div>
           </header>
 
-          <div className="content">
+          <div className="contentWeather">
             <div className="updateTime">
               Updated
               <span className="formatedTime">

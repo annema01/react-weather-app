@@ -13,11 +13,9 @@ textarea {
   background: linear-gradient(180deg, #cff4ff 0%, var(--background-color) 100%);
 }
 
-.Weather .containerWeather {
-  padding: 0 ;
-}
 
-.Weather .content {
+
+.Weather .contentWeather {
   height: 100vh;
   height: 100svh;
 
@@ -30,7 +28,6 @@ textarea {
   width: 100vw;
   width: 100svw;
   padding: 60px 30px 30px 30px;
-  margin: 0 -30px;
   background-color: var(--primary-color);
   position: relative;
   z-index: 1;
@@ -61,7 +58,7 @@ textarea {
 
 .Weather .updateTime {
   font-size: 12px;
-  margin: 10px 0;
+  margin: 10px 30px;
   font-style: italic;
   color: var(--light-text-color);
   text-shadow: var(--text-shadow);
@@ -186,7 +183,7 @@ textarea {
 
 .Weather .currentWeather {
   height: 100vh;
-  padding-top: 170px;
+  padding: 170px 30px 0;
   text-shadow: var(--text-shadow);
   position: relative;
   z-index: 1;
@@ -276,7 +273,7 @@ textarea {
     display: none;
   }
 
-  .Weather .container {
+  .Weather .content {
     padding: 0;
   }
 
@@ -307,8 +304,8 @@ textarea {
     align-items: center;
   }
 
-  .Weather .content {
-    padding: 0 88px 15px;
+  .Weather .contentWeather {
+    padding: 0 30px 15px;
     height: 700px;
   }
 
