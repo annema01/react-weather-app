@@ -5,13 +5,6 @@ import FormatedDate from "./FormatedDate";
 import "./Weather.css";
 import axios from "axios";
 import FormatedTimezone from "./FormatedTimezone";
-//import sunny from "./backgroundImages/sunny.svg";
-//import cloudy from "./backgroundImages/cloudy.svg";
-//import partlyCloudy from "./backgroundImages/partlyCloudy.svg";
-//import rain from "./backgroundImages/rain.svg";
-//import storm from "./backgroundImages/storm.svg";
-//import snow from "./backgroundImages/snow.svg";
-//import fog from "./backgroundImages/fog.svg";
 
 
 
@@ -19,6 +12,7 @@ import FormatedTimezone from "./FormatedTimezone";
 export default function Weather(props) {
   const [ weatherData, setWeatherData ] = useState({ ready: false }); // ready used to be a state but it was put as another data from the WeatherData
   const [ city, setCity ] = useState(props.defaultCity);
+  const [ unit, setUnit ] = useState("metric")
 
 
 
@@ -93,12 +87,26 @@ export default function Weather(props) {
   function handleCityChange(event) {
     setCity(event.target.value); // setCity to the value of the search field
   }
+  function showCelcius(event) {
+    event.preventDefault();
+    setUnit("metric");
+    search();
+
+  }
+  function showFahrenheit(event) {
+    event.preventDefault();
+    setUnit("imperial");
+    search();
+
+  }
   function search() {
     const apiKey = "f3009e4852fa0a079dab291dabf020c4";
-    let unit = "metric";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`;
     axios.get(apiUrl).then(handleResponse);
   }
+
+  console.log(unit);
+
 
   if (weatherData.ready) {
     return (
@@ -117,10 +125,10 @@ export default function Weather(props) {
               </button>
             </form>
             <div className="unitButtons col">
-              <a href="/" className="celsius active">
+              <a onClick={ showCelcius } href="/" className="celsius active">
                 °C
               </a>
-              <a href="/" className="fahrenheit ">
+              <a onClick={ showFahrenheit } href="/" className="fahrenheit ">
                 °F
               </a>
             </div>
@@ -139,10 +147,10 @@ export default function Weather(props) {
               5 days
               <i className="bi bi-caret-down"></i>
             </a>
-            <a href="/" className="celsiusSm active">
+            <a onClick={ showCelcius } href="/" className="celsiusSm active">
               °C
             </a>
-            <a href="/" className="fahrenheitSm ">
+            <a onClick={ showFahrenheit } href="/" className="fahrenheitSm ">
               °F
             </a>
             <div>
