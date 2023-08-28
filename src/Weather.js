@@ -12,7 +12,7 @@ import FormatedTimezone from "./FormatedTimezone";
 export default function Weather(props) {
   const [ weatherData, setWeatherData ] = useState({ ready: false }); // ready used to be a state but it was put as another data from the WeatherData
   const [ city, setCity ] = useState(props.defaultCity);
-  const [ unit, setUnit ] = useState("metric")
+  const [ unit, setUnit ] = useState("metric");
 
 
 
@@ -21,7 +21,6 @@ export default function Weather(props) {
     console.log(response.data);
 
     setWeatherData({
-
       //current
       ready: true,
       temperature: response.data.main.temp,
@@ -53,7 +52,7 @@ export default function Weather(props) {
 
   }
 
-  console.log(weatherData.icon);
+
   const codeMapping = {
     "01d": "sunny",
     "01n": "sunny",
@@ -74,6 +73,7 @@ export default function Weather(props) {
     "50d": "fog",
     "50n": "fog",
   }
+
   let currentWeatherImgStyle = {
     backgroundImage: `url(/backgroundImages/${codeMapping[ weatherData.icon ]}.svg)`,
     backgroundRepeat: "no-repeat",
@@ -87,25 +87,24 @@ export default function Weather(props) {
   function handleCityChange(event) {
     setCity(event.target.value); // setCity to the value of the search field
   }
-  function showCelcius(event) {
-    event.preventDefault();
-    setUnit("metric");
-    search();
 
-  }
-  function showFahrenheit(event) {
-    event.preventDefault();
-    setUnit("imperial");
-    search();
-
-  }
   function search() {
     const apiKey = "f3009e4852fa0a079dab291dabf020c4";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`;
     axios.get(apiUrl).then(handleResponse);
   }
 
-  console.log(unit);
+  function showCelcius(event) {
+    event.preventDefault();
+    setUnit("metric");
+    search();
+  }
+  function showFahrenheit(event) {
+    event.preventDefault();
+    setUnit("imperial");
+    search();
+  }
+
 
 
   if (weatherData.ready) {
