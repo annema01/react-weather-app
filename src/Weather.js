@@ -5,20 +5,29 @@ import FormatedDate from "./FormatedDate";
 import "./Weather.css";
 import axios from "axios";
 import FormatedTimezone from "./FormatedTimezone";
-import CurrentWeatherImg from "./CurrentWeatherImg";
+//import sunny from "./backgroundImages/sunny.svg";
+//import cloudy from "./backgroundImages/cloudy.svg";
+//import partlyCloudy from "./backgroundImages/partlyCloudy.svg";
+//import rain from "./backgroundImages/rain.svg";
+//import storm from "./backgroundImages/storm.svg";
+//import snow from "./backgroundImages/snow.svg";
+//import fog from "./backgroundImages/fog.svg";
 
 
-import wind from "./backgroundImages/wind.svg";
+
 
 export default function Weather(props) {
-  const [weatherData, setWeatherData] = useState({ ready: false }); // ready used to be a state but it was put as another data from the WeatherData
-  const [city, setCity] = useState(props.defaultCity);
+  const [ weatherData, setWeatherData ] = useState({ ready: false }); // ready used to be a state but it was put as another data from the WeatherData
+  const [ city, setCity ] = useState(props.defaultCity);
+
+
+
 
   function handleResponse(response) {
     console.log(response.data);
 
     setWeatherData({
-      
+
       //current
       ready: true,
       temperature: response.data.main.temp,
@@ -27,8 +36,8 @@ export default function Weather(props) {
       max: response.data.main.temp_max,
       city: response.data.name,
       country: response.data.sys.country,
-      description: response.data.weather[0].description,
-      icon: response.data.weather[0].icon,
+      description: response.data.weather[ 0 ].description,
+      icon: response.data.weather[ 0 ].icon,
       date: new Date(response.data.dt * 1000),
       timezone: response.data.timezone,
       //infos
@@ -50,6 +59,34 @@ export default function Weather(props) {
 
   }
 
+  console.log(weatherData.icon);
+  const codeMapping = {
+    "01d": "sunny",
+    "01n": "sunny",
+    "02d": "partlyCloudy",
+    "02n": "partlyCloudy",
+    "03d": "partlyCloudy",
+    "03n": "partlyCloudy",
+    "04d": "cloudy",
+    "04n": "cloudy",
+    "09d": "rain",
+    "09n": "rain",
+    "10d": "rain",
+    "10n": "rain",
+    "11d": "storm",
+    "11n": "storm",
+    "13d": "snow",
+    "13n": "snow",
+    "50d": "fog",
+    "50n": "fog",
+  }
+  let currentWeatherImgStyle = {
+    backgroundImage: `url(/backgroundImages/${codeMapping[ weatherData.icon ]}.svg)`,
+    backgroundSize: "75 %",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "right 10px top 25px",
+  }
+
   function handleSubmit(event) {
     event.preventDefault();
     search();
@@ -69,12 +106,12 @@ export default function Weather(props) {
       <div className="Weather">
         <div className="containerWeather">
           <header id="scrollUp">
-            <form onSubmit={handleSubmit} className="col-md-5">
+            <form onSubmit={ handleSubmit } className="col-md-5">
               <input
                 type="search"
                 placeholder="Enter a city..."
                 autoFocus="on"
-                onChange={handleCityChange}
+                onChange={ handleCityChange }
               />
               <button className="btn " type="submit">
                 <i className="bi bi-search"></i>
@@ -94,10 +131,10 @@ export default function Weather(props) {
             <div className="updateTime">
               Updated
               <span className="formatedTime">
-                <FormatedDate date={weatherData.date} />
+                <FormatedDate date={ weatherData.date } />
               </span>
             </div>
-            {/* Buttons top */}
+            {/* Buttons top */ }
 
             <a href="#forcast" className="btn forcastAnchor">
               5 days
@@ -110,18 +147,18 @@ export default function Weather(props) {
               °F
             </a>
             <div>
-              
-              <div className="currentWeather"  ><CurrentWeatherImg />
+
+              <div className="currentWeather" style={ currentWeatherImgStyle } >
                 <div className="degree">
-                  {Math.round(weatherData.temperature)}°
+                  { Math.round(weatherData.temperature) }°
                 </div>
-                <div className="description">{weatherData.description} </div>
+                <div className="description">{ weatherData.description } </div>
                 <div className="feelsLike">
-                  Feels like {Math.round(weatherData.feelsLike)}°
+                  Feels like { Math.round(weatherData.feelsLike) }°
                 </div>
                 <div className="minMax">
-                  {Math.round(weatherData.min)}° |{" "}
-                  <strong>{Math.round(weatherData.max)}°</strong>
+                  { Math.round(weatherData.min) }° |{ " " }
+                  <strong>{ Math.round(weatherData.max) }°</strong>
                 </div>
 
                 <div className="positionTime">
@@ -130,11 +167,11 @@ export default function Weather(props) {
                       <i className="bi bi-geo-alt"></i>
                     </a>
                     <div className="city">
-                      {weatherData.city}, {weatherData.country}
+                      { weatherData.city }, { weatherData.country }
                     </div>
                   </div>
                   <div className="time ">
-                    <FormatedTimezone timezone={weatherData.timezone} />
+                    <FormatedTimezone timezone={ weatherData.timezone } />
                   </div>
                 </div>
               </div>
@@ -142,7 +179,7 @@ export default function Weather(props) {
           </div>
         </div>
         <div className="">
-          <Infos data={weatherData} />
+          <Infos data={ weatherData } />
         </div>
       </div>
     );
