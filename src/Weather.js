@@ -105,6 +105,7 @@ export default function Weather(props) {
     search();
 
     // return function (optionnal)
+    // eslint-disable-next-line
   }, [ unit ]);//dependency array
 
   function showFahrenheit(event) {
