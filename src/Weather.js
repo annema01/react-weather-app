@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Infos from "./Infos";
 
 import FormatedDate from "./FormatedDate";
 import "./Weather.css";
 import axios from "axios";
 import FormatedTimezone from "./FormatedTimezone";
+import FahrenheitButton from "./FahrenheitButton";
+
 
 
 
@@ -34,7 +36,7 @@ export default function Weather(props) {
       date: new Date(response.data.dt * 1000),
       timezone: response.data.timezone,
       //infos
-      airQuality: "airQua",
+      airQuality: "airQua", //need the air polution api
       humidity: response.data.main.humidity,
       windSpeed: response.data.wind.speed,
       windDeg: response.data.wind.deg,
@@ -94,15 +96,23 @@ export default function Weather(props) {
     axios.get(apiUrl).then(handleResponse);
   }
 
-  function showCelcius(event) {
-    event.preventDefault();
-    setUnit("metric");
+
+  useEffect(() => {
+    //code i want to run
     search();
-  }
+
+    // return function (optionnal)
+  }, [ unit ]);//dependency array
+
   function showFahrenheit(event) {
     event.preventDefault();
     setUnit("imperial");
-    search();
+
+  }
+
+  function showCelcius(event) {
+    event.preventDefault();
+    setUnit("metric");
   }
 
 
@@ -127,6 +137,7 @@ export default function Weather(props) {
               <a onClick={ showCelcius } href="/" className="celsius active">
                 °C
               </a>
+              <FahrenheitButton handle={ showFahrenheit } />
               <a onClick={ showFahrenheit } href="/" className="fahrenheit ">
                 °F
               </a>
@@ -149,9 +160,9 @@ export default function Weather(props) {
             <a onClick={ showCelcius } href="/" className="celsiusSm active">
               °C
             </a>
-            <a onClick={ showFahrenheit } href="/" className="fahrenheitSm ">
+            {/*  <a onClick={  } href="/" className="fahrenheitSm ">
               °F
-            </a>
+            </a>*/}
             <div>
 
               <div className="currentWeather" style={ currentWeatherImgStyle } >
@@ -190,7 +201,7 @@ export default function Weather(props) {
       </div>
     );
   } else {
-    search();
+    //search();
     return "Loading...";
   }
 }
