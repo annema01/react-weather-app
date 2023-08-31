@@ -5,7 +5,9 @@ import FormatedDate from "./FormatedDate";
 import "./Weather.css";
 import axios from "axios";
 import FormatedTimezone from "./FormatedTimezone";
-import FahrenheitButton from "./FahrenheitButton";
+import UnitLinks from "./UnitLinks";
+
+
 
 
 
@@ -15,6 +17,7 @@ export default function Weather(props) {
   const [ weatherData, setWeatherData ] = useState({ ready: false }); // ready used to be a state but it was put as another data from the WeatherData
   const [ city, setCity ] = useState(props.defaultCity);
   const [ unit, setUnit ] = useState("metric");
+
 
 
 
@@ -107,7 +110,6 @@ export default function Weather(props) {
   function showFahrenheit(event) {
     event.preventDefault();
     setUnit("imperial");
-
   }
 
   function showCelcius(event) {
@@ -133,15 +135,8 @@ export default function Weather(props) {
                 <i className="bi bi-search"></i>
               </button>
             </form>
-            <div className="unitButtons col">
-              <a onClick={ showCelcius } href="/" className="celsius active">
-                °C
-              </a>
-              <FahrenheitButton handle={ showFahrenheit } />
-              <a onClick={ showFahrenheit } href="/" className="fahrenheit ">
-                °F
-              </a>
-            </div>
+            <UnitLinks celciusFunction={ showCelcius } fahrenheitFunction={ showFahrenheit } unit={ unit } mobile=" " />
+
           </header>
 
           <div className="contentWeather">
@@ -157,12 +152,8 @@ export default function Weather(props) {
               5 days
               <i className="bi bi-caret-down"></i>
             </a>
-            <a onClick={ showCelcius } href="/" className="celsiusSm active">
-              °C
-            </a>
-            {/*  <a onClick={  } href="/" className="fahrenheitSm ">
-              °F
-            </a>*/}
+            <UnitLinks celciusFunction={ showCelcius } fahrenheitFunction={ showFahrenheit } unit={ unit } mobile="Sm" />
+
             <div>
 
               <div className="currentWeather" style={ currentWeatherImgStyle } >
