@@ -2,7 +2,6 @@ import React from "react";
 import UnitLinks from "./UnitLinks";
 
 export default function HeaderApp(props) {
-    console.log(props.handleCityChange)
     return (
         <header id="scrollUp">
             <form onSubmit={ props.submit } className="col-md-5">
