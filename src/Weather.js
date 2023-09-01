@@ -1,16 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Infos from "./Infos";
 
+import HeaderApp from "./HeaderApp";
 import FormatedDate from "./FormatedDate";
 import "./Weather.css";
 import axios from "axios";
-import FormatedTimezone from "./FormatedTimezone";
 import UnitLinks from "./UnitLinks";
-
-
-
-
-
+import CurrentWeatherInfos from "./CurrentWeatherInfos";
 
 
 export default function Weather(props) {
@@ -19,11 +15,16 @@ export default function Weather(props) {
   const [ unit, setUnit ] = useState("metric");
 
 
-
-
-
   function handleResponse(response) {
     console.log(response.data);
+    let rain = response.data.rain && response.data.rain[ '1h' ];
+    if (rain === undefined) {
+      rain = "-";
+    }
+    let snow = response.data.snow && response.data.snow[ '1h' ];
+    if (snow === undefined) {
+      snow = "-";
+    }
 
     setWeatherData({
       //current
@@ -44,8 +45,8 @@ export default function Weather(props) {
       windSpeed: response.data.wind.speed,
       windDeg: response.data.wind.deg,
       windGust: response.data.wind.gust,
-      // rain: response.data.rain.1h,
-      // snow: response.data.snow.1h,
+      rain: rain,
+      snow: snow,
       pressure: response.data.main.pressure,
       visibility: response.data.visibility,
       clouds: response.data.clouds.all,
@@ -55,34 +56,6 @@ export default function Weather(props) {
       latitude: response.data.coord.lat,
     });
 
-  }
-
-
-  const codeMapping = {
-    "01d": "sunny",
-    "01n": "sunny",
-    "02d": "partlyCloudy",
-    "02n": "partlyCloudy",
-    "03d": "partlyCloudy",
-    "03n": "partlyCloudy",
-    "04d": "cloudy",
-    "04n": "cloudy",
-    "09d": "rain",
-    "09n": "rain",
-    "10d": "rain",
-    "10n": "rain",
-    "11d": "storm",
-    "11n": "storm",
-    "13d": "snow",
-    "13n": "snow",
-    "50d": "fog",
-    "50n": "fog",
-  }
-
-  let currentWeatherImgStyle = {
-    backgroundImage: `url(/backgroundImages/${codeMapping[ weatherData.icon ]}.svg)`,
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "right 10px top 25px",
   }
 
   function handleSubmit(event) {
@@ -124,21 +97,13 @@ export default function Weather(props) {
     return (
       <div className="Weather">
         <div className="container content">
-          <header id="scrollUp">
-            <form onSubmit={ handleSubmit } className="col-md-5">
-              <input
-                type="search"
-                placeholder="Enter a city..."
-                autoFocus="on"
-                onChange={ handleCityChange }
-              />
-              <button className="btn " type="submit">
-                <i className="bi bi-search"></i>
-              </button>
-            </form>
-            <UnitLinks celciusFunction={ showCelcius } fahrenheitFunction={ showFahrenheit } unit={ unit } mobile=" " />
+          <HeaderApp
+            submit={ handleSubmit }
+            cityChange={ handleCityChange }
+            celcius={ showCelcius }
+            fahrenheit={ showFahrenheit }
+            unit={ unit } />
 
-          </header>
 
           <div className="contentWeather">
             <div className="updateTime">
@@ -153,47 +118,33 @@ export default function Weather(props) {
               5 days
               <i className="bi bi-caret-down"></i>
             </a>
-            <UnitLinks celciusFunction={ showCelcius } fahrenheitFunction={ showFahrenheit } unit={ unit } mobile="Sm" />
+            <UnitLinks
+              celciusFunction={ showCelcius }
+              fahrenheitFunction={ showFahrenheit }
+              unit={ unit }
+              mobile="Sm" />
 
             <div>
+              <CurrentWeatherInfos
+                icon={ weatherData.icon }
+                temperature={ weatherData.temperature }
+                description={ weatherData.description }
+                feelsLike={ weatherData.feelsLike }
+                min={ weatherData.min }
+                max={ weatherData.max }
+                city={ weatherData.city }
+                country={ weatherData.country }
+                timezone={ weatherData.timezone } />
 
-              <div className="currentWeather" style={ currentWeatherImgStyle } >
-                <div className="degree">
-                  { Math.round(weatherData.temperature) }°
-                </div>
-                <div className="description">{ weatherData.description } </div>
-                <div className="feelsLike">
-                  Feels like { Math.round(weatherData.feelsLike) }°
-                </div>
-                <div className="minMax">
-                  { Math.round(weatherData.min) }° |{ " " }
-                  <strong>{ Math.round(weatherData.max) }°</strong>
-                </div>
-
-                <div className="positionTime">
-                  <div className="position">
-                    <a href="/" className="btn geoButton">
-                      <i className="bi bi-geo-alt"></i>
-                    </a>
-                    <div className="city">
-                      { weatherData.city }, { weatherData.country }
-                    </div>
-                  </div>
-                  <div className="time ">
-                    <FormatedTimezone timezone={ weatherData.timezone } />
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
-        <div className="">
+        <div>
           <Infos data={ weatherData } />
         </div>
       </div>
     );
   } else {
-    //search();
     return "Loading...";
   }
 }
