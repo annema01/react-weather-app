@@ -1,6 +1,6 @@
 import "./App.css"
 import Weather from "./Weather"
-//import Forcast from "./Forcast"
+import Forcast from "./Forcast"
 import Footer from "./Footer"
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
       <div className="row g-0 contentAll">
         <div className="col-md-7"><Weather defaultCity="Montreal" />
         </div>
-        {/*  <div className=" col-md-5 g-0 forcastSection">
+        <div className=" col-md-5 g-0 forcastSection">
           <Forcast
             weekday='Wednesday'
             weekdayAbbr='Wed.'
@@ -56,7 +56,7 @@ function App() {
             max='20'
             collapse='day5'
           />
-        </div>*/}
+        </div>
         <Footer />
       </div>
       <a
