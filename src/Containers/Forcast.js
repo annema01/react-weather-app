@@ -12,11 +12,12 @@ export default function Forcast(props) {
 
 
   function handleResponse(response) {
-    console.log(response.data);
+
+    console.log(response.data)
   }
 
-  let longitude = -73.561668;
-  let latitude = 45.508888;
+  let longitude = props.longitude;
+  let latitude = props.latitude;
   const apiKey = "f3009e4852fa0a079dab291dabf020c4";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
 
