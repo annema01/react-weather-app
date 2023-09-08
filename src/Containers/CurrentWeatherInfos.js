@@ -1,8 +1,9 @@
 import React from "react";
 
-import FormatedTimezone from "./FormatedTimezone";
-import CurrentWeatherImages from "./CurrentWeatherImages";
 import { renderToString } from 'react-dom/server';
+
+import FormatedTimezone from "../Components/FormatedTimezone";
+import CurrentWeatherImages from "../Components/CurrentWeatherImages";
 
 
 export default function CurrentWeatherInfos(props) {

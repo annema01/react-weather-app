@@ -2,7 +2,7 @@ import React from "react";
 
 import FormatedHour from "./FormatedHour";
 
-export default function InfosComponentTime(props) {
+export default function InfosCategoryTime(props) {
     if (props.title === "Sunrise") {
         return (
             <div className='col-6 col-md-4'>

@@ -1,7 +1,7 @@
-import "./App.css";
-import Weather from "./Weather";
-import Forcast from "./Forcast";
-import Footer from "./Footer";
+import "./styles/App.css";
+import Weather from "./Containers/Weather";
+import Forcast from "./Containers/Forcast";
+import Footer from "./Containers/Footer";
 
 function App() {
   return (

@@ -1,9 +1,24 @@
 import React from "react"
-import "./Forcast.css"
-import ForcastInfos from "./ForcastInfos"
+import "../styles/Forcast.css"
+
+import ForcastInfos from "../Components/ForcastInfos"
+import axios from "axios";
+
 
 
 export default function Forcast(props) {
+
+  function handleResponse(response) {
+    console.log(response.data);
+  }
+
+  let longitude = -73.561668;
+  let latitude = 45.508888;
+  const apiKey = "f3009e4852fa0a079dab291dabf020c4";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
+
+  axios.length(apiUrl).then(handleResponse);
+
   return (
     <div className='Forcast'>
 

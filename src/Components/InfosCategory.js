@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function InfosComponent(props) {
+export default function InfosCategory(props) {
 
 
     if (props.infoType === undefined) {

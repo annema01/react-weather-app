@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function PrecipitationInfosComponent(props) {
+export default function InfosCategoryPrecipitation(props) {
 
     if (props.rain === "-" && props.snow === "-") {
         return (

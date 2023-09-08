@@ -1,10 +1,10 @@
 import React from "react"
-import "./Infos.css"
+import "../styles/Infos.css"
 
 //component import
-import InfosComponent from "./InfosComponent"
-import InfosComponentTime from "./InfosComponentTime"
-import PrecipitationInfosComponent from "./PrecipitationInfosComponent"
+import InfosCategory from "../Components/InfosCategory"
+import InfosCategoryTime from "../Components/InfosCategoryTime"
+import InfosCategoryPrecipitation from "../Components/InfosCategoryPrecipitation"
 
 export default function Infos(props) {
 
@@ -26,7 +26,7 @@ export default function Infos(props) {
       >
         <div className='row'>
 
-          <InfosComponent
+          <InfosCategory
             infoType={ undefined }
             icon={ "cloud-haze2" }
             title={ "Air quality" }
@@ -34,7 +34,7 @@ export default function Infos(props) {
             unit={ "" }
           />
 
-          <InfosComponent
+          <InfosCategory
             infoType={ props.data.humidity }
             icon={ "droplet" }
             title={ "Humidity" }
@@ -42,7 +42,7 @@ export default function Infos(props) {
             unit={ "%" }
           />
           {/*Wind Speed special component */ }
-          <InfosComponent
+          <InfosCategory
             infoType={ props.data.windSpeed }
             icon={ "wind" }
             title={ "Wind speed" }
@@ -52,7 +52,7 @@ export default function Infos(props) {
           />
 
 
-          <InfosComponent
+          <InfosCategory
             infoType={ props.data.windGust }
             icon={ "tornado" }
             title={ "Wind gust" }
@@ -60,30 +60,30 @@ export default function Infos(props) {
             unit={ "m/s" }
           />
 
-          <PrecipitationInfosComponent snow={ props.data.snow } rain={ props.data.rain } />
+          <InfosCategoryPrecipitation snow={ props.data.snow } rain={ props.data.rain } />
 
-          <InfosComponent
+          <InfosCategory
             infoType={ props.data.pressure }
             icon={ "arrow-down-up" }
             title={ "Pressure" }
             dataType={ "integer" }
             unit={ "hPa" }
           />
-          <InfosComponent
+          <InfosCategory
             infoType={ props.data.visibility }
             icon={ "eye" }
             title={ "Visibility" }
             dataType={ "integer" }
             unit={ "m" }
           />
-          <InfosComponent
+          <InfosCategory
             infoType={ props.data.clouds }
             icon={ "clouds" }
             title={ "Clouds" }
             dataType={ "integer" }
             unit={ "%" }
           />
-          <InfosComponentTime
+          <InfosCategoryTime
             infoType={ props.data.clouds }
             icon={ "sunrise" }
             title={ "Sunrise" }
@@ -93,7 +93,7 @@ export default function Infos(props) {
             timezone={ props.data.timezone }
           />
 
-          <InfosComponentTime
+          <InfosCategoryTime
             infoType={ props.data.sunset }
             icon={ "sunset" }
             title={ "Sunset" }
