@@ -11,11 +11,13 @@ import UnitLinks from "../Components/UnitLinks";
 import CurrentWeatherInfos from "./CurrentWeatherInfos";
 
 export default function Weather(props) {
+
   const [ weatherData, setWeatherData ] = useState({ ready: false }); // ready used to be a state but it was put as another data from the WeatherData
   const [ city, setCity ] = useState(props.defaultCity);
   const [ unit, setUnit ] = useState("metric");
 
   function handleResponse(response) {
+
     console.log(response.data);
     let rain = response.data.rain && response.data.rain[ "1h" ];
     if (rain === undefined) {
@@ -25,6 +27,8 @@ export default function Weather(props) {
     if (snow === undefined) {
       snow = "-";
     }
+
+
 
     setWeatherData({
       //current
@@ -52,7 +56,6 @@ export default function Weather(props) {
       clouds: response.data.clouds.all,
       sunrise: new Date(response.data.sys.sunrise * 1000),
       sunset: new Date(response.data.sys.sunset * 1000),
-      coordinates: response.data.coord,
     });
   }
 
@@ -65,9 +68,12 @@ export default function Weather(props) {
   }
 
   function search() {
+
     const apiKey = "f3009e4852fa0a079dab291dabf020c4";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`;
     axios.get(apiUrl).then(handleResponse);
+
+
   }
 
   useEffect(() => {

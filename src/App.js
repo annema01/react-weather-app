@@ -4,6 +4,9 @@ import Forcast from "./Containers/Forcast";
 import Footer from "./Containers/Footer";
 
 function App() {
+
+
+
   return (
     <div className="App g-0">
       <div className="row g-0 contentAll">
