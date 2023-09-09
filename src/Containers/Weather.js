@@ -7,6 +7,8 @@ import HeaderApp from "./HeaderApp";
 import FormatedDate from "../Components/FormatedDate";
 import UnitLinks from "../Components/UnitLinks";
 import CurrentWeatherInfos from "./CurrentWeatherInfos";
+import { RotatingLines } from "react-loader-spinner";
+
 
 export default function Weather(props) {
 
@@ -64,6 +66,18 @@ export default function Weather(props) {
       </div>
     );
   } else {
-    return "Loading...";
+    return (
+      <div className="row pt-5">
+        <div className="col d-flex justify-content-center pt-4">
+          <RotatingLines
+            strokeColor="#017eff"
+            strokeWidth="2"
+            animationDuration="1.5"
+            width="96"
+            visible={ true }
+          />
+        </div>
+      </div>
+    );
   }
 }
