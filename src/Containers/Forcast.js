@@ -1,63 +1,48 @@
-import React from "react"
+import React, { useState } from "react"
 import "../styles/Forcast.css"
 
 import axios from "axios";
 
-import ForcastInfos from "../Components/ForcastInfos"
+import ForcastDay from "../Components/ForcastDay";
 
 
 
 export default function Forcast(props) {
+  let [ loaded, setLoaded ] = useState(false);
+  let [ forcast, setForcast ] = useState(null);
+
 
 
 
   function handleResponse(response) {
 
-    console.log(response.data)
+    setForcast(response.data.daily);
+    setLoaded(true);
+    console.log(response.data.daily);
   }
 
-  let longitude = props.longitude;
-  let latitude = props.latitude;
-  const apiKey = "f3009e4852fa0a079dab291dabf020c4";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
+  if (loaded) {
+    return (
+      <ForcastDay
+        data={ forcast[ 0 ] }
+        collapse="day1"
+        target="#day1"
 
-  axios.get(apiUrl).then(handleResponse);
+      />
+    )
 
-  return (
-    <div className='Forcast'>
+  } else {
+    console.log(`LAT${props.latitude}`);
 
-      <div className='container'>
+    let unit = props.unit;
+    let longitude = props.longitude;
+    let latitude = props.latitude;
+    const apiKey = props.apiKey;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${unit}`;
+    console.log(apiUrl);
 
-        <a className='notCollapsable'
-          data-bs-toggle='collapse'
-          href={ `#` + props.collapse }
-          role='button'
-          aria-expanded='false'
-          aria-controls={ props.collapse }>
-
-          <div className='weekDay col-6 fullText'>{ props.weekday }</div>
-          <i
-            className={
-              `icon ` + props.fill + ` bi bi-` + props.icon + `-fill col`
-            }
-          ></i>
-          <div className='minMax col' >
-            <div className='min'>{ props.min }°</div><span className="shortText">/</span>
-            <strong className='max'>{ props.max }°</strong>
-          </div>
-          <i className='bi bi-caret-right-fill forcastCaret'></i>
-        </a>
-
-      </div>
-      {/*  Collapsable element  */ }
-      <div
-        className={ `collapse ` + props.collapse }
-        id={ props.collapse }
-      >
-        <ForcastInfos />
-      </div>
+    axios.get(apiUrl).then(handleResponse);
 
 
-    </div>
-  )
+  }
 }

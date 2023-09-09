@@ -26,13 +26,6 @@ export default function Infos(props) {
       >
         <div className='row'>
 
-          <InfosCategory
-            infoType={ undefined }
-            icon={ "cloud-haze2" }
-            title={ "Air quality" }
-            dataType={ "text" }
-            unit={ "" }
-          />
 
           <InfosCategory
             infoType={ props.data.humidity }

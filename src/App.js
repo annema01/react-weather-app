@@ -14,6 +14,7 @@ function App() {
   const [ weatherData, setWeatherData ] = useState({ ready: false }); // ready used to be a state but it was put as another data from the WeatherData
   const [ city, setCity ] = useState("montreal");
   const [ unit, setUnit ] = useState("metric");
+  const apiKey = "aa09763d916df0424c840d55bfc2d2c9";
 
   function handleResponse(response) {
 
@@ -70,7 +71,6 @@ function App() {
 
   function search() {
 
-    const apiKey = "f3009e4852fa0a079dab291dabf020c4";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`;
     axios.get(apiUrl).then(handleResponse);
 
@@ -111,17 +111,10 @@ function App() {
         </div>
         <div className=" col-md-5 g-0 forcastSection">
           <Forcast
-            weekday="Wednesday"
-            weekdayAbbr="Wed."
-            icon="sun"
-            fill="yellow"
-            min="16"
-            max="25"
-            collapse="day1"
-            target="#day1"
             longitude={ weatherData.longitude }
             latitude={ weatherData.latitude }
-
+            unit={ unit }
+            apiKey={ apiKey }
           />
         </div>
         <Footer />
