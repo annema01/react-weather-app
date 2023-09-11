@@ -14,7 +14,6 @@ function App() {
   const [ weatherData, setWeatherData ] = useState({ ready: false }); // ready used to be a state but it was put as another data from the WeatherData
   const [ city, setCity ] = useState("montreal");
   const [ unit, setUnit ] = useState("metric");
-  const apiKey = "aa09763d916df0424c840d55bfc2d2c9";
 
   function handleResponse(response) {
 
@@ -55,10 +54,11 @@ function App() {
       clouds: response.data.clouds.all,
       sunrise: new Date(response.data.sys.sunrise * 1000),
       sunset: new Date(response.data.sys.sunset * 1000),
+      longitude: response.data.coord.lon,
       latitude: response.data.coord.lat,
-      longitude: response.data.coord.lon
 
     });
+
   }
 
   function handleSubmit(event) {
@@ -70,6 +70,7 @@ function App() {
   }
 
   function search() {
+    const apiKey = "aa09763d916df0424c840d55bfc2d2c9";
 
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`;
     axios.get(apiUrl).then(handleResponse);
@@ -114,7 +115,7 @@ function App() {
             longitude={ weatherData.longitude }
             latitude={ weatherData.latitude }
             unit={ unit }
-            apiKey={ apiKey }
+
           />
         </div>
         <Footer />
