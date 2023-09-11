@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import "../styles/Forcast.css"
 
@@ -17,38 +17,40 @@ export default function Forcast(props) {
 
 
   function handleResponse(response) {
-
+    console.log(response.data.daily);
     setForcast(response.data.daily);
     setLoaded(true);
   }
 
 
 
-  if (loaded) {
-    return (
-      <ForcastDay
-        data={ forcast[ 0 ] }
-        collapse="day1"
-        target="#day1"
 
-      />
-    )
+  if (props.longitude && props.latitude) {
 
-  } else {
+    if (loaded) {
+      return (
+        <ForcastDay
+          data={ forcast[ 0 ] }
+          collapse="day1"
+        />
+      )
 
-    console.log(props.latitude);
-    console.log(props.longitude);
-    const apiKey = "aa09763d916df0424c840d55bfc2d2c9";
+    } else {
 
-    let unit = props.unit;
-    let longitude = props.longitude;
-    let latitude = props.latitude;
-    //const apiKey = props.apiKey;
-    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${unit}`;
+      console.log(props.latitude);
+      console.log(props.longitude);
 
-    axios.get(apiUrl).then(handleResponse);
+      const apiKey = props.apiKey;
 
-    return null;
+      let unit = props.unit;
+      let longitude = props.longitude;
+      let latitude = props.latitude;
+      let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${unit}`;
 
+      axios.get(apiUrl).then(handleResponse);
+
+      return null;
+
+    }
   }
 }

@@ -15,6 +15,8 @@ function App() {
   const [ city, setCity ] = useState("montreal");
   const [ unit, setUnit ] = useState("metric");
 
+  const apiKey = "aa09763d916df0424c840d55bfc2d2c9";
+
   function handleResponse(response) {
 
     console.log(response.data);
@@ -70,7 +72,6 @@ function App() {
   }
 
   function search() {
-    const apiKey = "aa09763d916df0424c840d55bfc2d2c9";
 
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`;
     axios.get(apiUrl).then(handleResponse);
@@ -115,6 +116,7 @@ function App() {
             longitude={ weatherData.longitude }
             latitude={ weatherData.latitude }
             unit={ unit }
+            apiKey={ apiKey }
 
           />
         </div>

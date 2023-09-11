@@ -67,11 +67,7 @@ export default function ForcastDay(props) {
                     aria-controls={ props.collapse }>
 
                     <div className='weekDay col-6 fullText'>{ day() }</div>
-                    <i
-                        className={
-                            `icon blue bi bi-${forcastIcon()}-fill col`
-                        }
-                    ></i>
+                    <i className={ `icon blue bi bi-${forcastIcon()}-fill col` }></i>
                     <div className='minMax col' >
                         <div className='min'>{ minTemperature() }</div><span className="shortText">/</span>
                         <strong className='max'>{ maxTemperature() }</strong>
