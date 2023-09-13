@@ -14,6 +14,7 @@ export default function CurrentWeatherInfos(props) {
         backgroundImage: `url(/backgroundImages/${backgroundImage}.svg)`,
         backgroundRepeat: "no-repeat",
         backgroundPosition: "right 10px top 25px",
+        backgroundSize: "90%"
     }
     return (
         <div className="currentWeather" style={ currentWeatherImgStyle } >
