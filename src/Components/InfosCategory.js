@@ -16,7 +16,7 @@ export default function InfosCategory(props) {
                             <svg
                                 className='windDirection'
                                 style={ {
-                                    transform: `rotate(${props.windDeg}deg)`,
+                                    transform: `rotate(${props.windDeg - 50}deg)`,
                                 } }
                                 xmlns='http://www.w3.org/2000/svg'
                                 viewBox='0 0 448 512'
