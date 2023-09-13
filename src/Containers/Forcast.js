@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import "../styles/Forcast.css"
 
@@ -11,10 +11,7 @@ import ForcastDay from "../Components/ForcastDay";
 export default function Forcast(props) {
   let [ loaded, setLoaded ] = useState(false);
   let [ forcast, setForcast ] = useState(null);
-
-
-
-
+  let day = [ "day1", "day2", "day3", "day4", "day5" ]
 
   function handleResponse(response) {
     console.log(response.data.daily);
@@ -24,6 +21,18 @@ export default function Forcast(props) {
 
 
 
+  useEffect(() => {
+    //code i want to run
+    setLoaded(false);
+    // return function (optionnal)
+  }, [ props.longitude ]); //dependency array
+
+
+  useEffect(() => {
+    //code i want to run
+    setLoaded(false);
+    // return function (optionnal)
+  }, [ props.unit ]); //dependency array
 
   if (props.longitude && props.latitude) {
 
@@ -34,9 +43,11 @@ export default function Forcast(props) {
             if (index < 5) {
               return (
                 <div key={ index }>
-                  <ForcastDay data={ dailyForecast } collapse="day1" />
+                  <ForcastDay data={ dailyForecast } collapse={ day[ index ] } />
                 </div>
               );
+            } else {
+              return null;
             }
           }) }
         </div>
