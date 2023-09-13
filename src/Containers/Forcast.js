@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import "../styles/Forcast.css"
 
@@ -29,11 +29,18 @@ export default function Forcast(props) {
 
     if (loaded) {
       return (
-        <ForcastDay
-          data={ forcast[ 0 ] }
-          collapse="day1"
-        />
-      )
+        <div>
+          { forcast.map(function (dailyForecast, index) {
+            if (index < 5) {
+              return (
+                <div key={ index }>
+                  <ForcastDay data={ dailyForecast } collapse="day1" />
+                </div>
+              );
+            }
+          }) }
+        </div>
+      );
 
     } else {
 
