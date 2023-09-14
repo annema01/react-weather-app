@@ -66,8 +66,11 @@ function App() {
   function handleError(code) {
 
     if (code === 404) {
-      setCity("Montreal");
-      prompt("please enter a valid city");
+      setCity("Montreal")
+      prompt("error")
+    }
+    else {
+      return null;
     }
   }
 
