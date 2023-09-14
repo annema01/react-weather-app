@@ -57,9 +57,18 @@ function App() {
       sunset: new Date(response.data.sys.sunset * 1000),
       longitude: response.data.coord.lon,
       latitude: response.data.coord.lat,
+      error: response.data.cod,
 
     });
 
+  }
+
+  function handleError(code) {
+
+    if (code === 404) {
+      setCity("Montreal");
+      prompt("please enter a valid city");
+    }
   }
 
   function handleSubmit(event) {
@@ -71,7 +80,7 @@ function App() {
   }
 
   function search() {
-
+    handleError(weatherData.error);
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`;
     axios.get(apiUrl).then(handleResponse);
 

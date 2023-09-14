@@ -21,6 +21,17 @@ export default function Forcast(props) {
     setLoaded(true);
   }
 
+  function Load() {
+    const apiKey = props.apiKey;
+
+    let unit = props.unit;
+    let longitude = props.longitude;
+    let latitude = props.latitude;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${unit}`;
+
+    axios.get(apiUrl).then(handleResponse);
+  }
+
 
 
   useEffect(() => {
@@ -49,34 +60,23 @@ export default function Forcast(props) {
                 </div>
               );
             } else {
-              <div className="col d-flex justify-content-center pt-4">
-                <RotatingLines
-                  strokeColor="#017eff"
-                  strokeWidth="2"
-                  animationDuration="1.5"
-                  width="96"
-                  visible={ true }
-                />
-              </div>
+              return null;
             }
           }) }
         </div>
       );
 
     } else {
-
-      console.log(props.latitude);
-      console.log(props.longitude);
-
-      const apiKey = props.apiKey;
-
-      let unit = props.unit;
-      let longitude = props.longitude;
-      let latitude = props.latitude;
-      let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${unit}`;
-
-      axios.get(apiUrl).then(handleResponse);
-
+      <div className="col d-flex justify-content-center pt-4">
+        <RotatingLines
+          strokeColor="#017eff"
+          strokeWidth="2"
+          animationDuration="1.5"
+          width="96"
+          visible={ true }
+        />
+      </div>
+      Load();
       return null;
 
     }

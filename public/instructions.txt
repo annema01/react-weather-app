@@ -1,23 +1,10 @@
-Forcast:
-    - move main API call to App.js and pass info as props to the weather.js component
-    - get the API call for forcast
-    - get all the data
-    - format:
-        - time (day of the week)
-        - number rounded
-        - icons
-    - loop to get the five days
 
 
 Refactoring:
-    - Create folder:
-        - css
-        - jsx
-            organise jsx by hierachy 
     - Adjust css file and classNames (some component don't have their main css className created)
 
 Feature to add:
-    - change units for some of the infos
+
     - Error pop up if the data entered returns Not found
     - add air polution API (using the coords)
     - Localisation button
