@@ -5,6 +5,7 @@ import "../styles/Infos.css"
 import InfosCategory from "../Components/InfosCategory"
 import InfosCategoryTime from "../Components/InfosCategoryTime"
 import InfosCategoryPrecipitation from "../Components/InfosCategoryPrecipitation"
+import InfosCategoryVisibility from "../Components/InfosCategoryVisibility"
 
 export default function Infos(props) {
 
@@ -36,38 +37,38 @@ export default function Infos(props) {
           />
           {/*Wind Speed special component */ }
           <InfosCategory
-            infoType={ props.data.windSpeed }
+            infoType={ props.data.windSpeed * 3.6 }
             icon={ "wind" }
             title={ "Wind speed" }
             dataType={ "integer" }
-            unit={ "m/s" }
+            unit={ "km/s" }
             windDeg={ props.data.windDeg }
           />
 
 
           <InfosCategory
-            infoType={ props.data.windGust }
+            infoType={ props.data.windGust * 3.6 }
             icon={ "tornado" }
             title={ "Wind gust" }
             dataType={ "integer" }
-            unit={ "m/s" }
+            unit={ "km/s" }
           />
 
           <InfosCategoryPrecipitation snow={ props.data.snow } rain={ props.data.rain } />
 
           <InfosCategory
-            infoType={ props.data.pressure }
+            infoType={ props.data.pressure * 0.1 }
             icon={ "arrow-down-up" }
             title={ "Pressure" }
             dataType={ "integer" }
-            unit={ "hPa" }
+            unit={ "kPa" }
           />
-          <InfosCategory
-            infoType={ props.data.visibility }
+          <InfosCategoryVisibility
+            infoType={ props.data.visibility / 1000 }
             icon={ "eye" }
             title={ "Visibility" }
             dataType={ "integer" }
-            unit={ "m" }
+            unit={ "km" }
           />
           <InfosCategory
             infoType={ props.data.clouds }

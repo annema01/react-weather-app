@@ -23,7 +23,7 @@ export default function ForcastInfos(props) {
                 <div className='col-6'>
                     <div className='title'>Pressure</div>
                     <div className='data integer'>
-                        { props.forcastData.pressure } <span className='unit'>hPa</span>
+                        { Math.round(props.forcastData.pressure * 0.1) }  <span className='unit'>kPa</span>
                     </div>
                 </div>
                 <div className='col-6'>
@@ -42,7 +42,7 @@ export default function ForcastInfos(props) {
                         </svg>
 
 
-                        { props.forcastData.wind_deg }° { Math.round(props.forcastData.wind_speed) } <span className='unit'>m/s</span>
+                        { Math.round(props.forcastData.wind_speed * 3.6) } <span className='unit'>km/s</span>
                     </div>
                 </div>
             </div>
@@ -53,7 +53,7 @@ export default function ForcastInfos(props) {
                 <div className='col-6'>
                     <div className='title'>Wind gust</div>
                     <div className='data integer'>
-                        { Math.round(props.forcastData.wind_gust) } <span className='unit'>m/s</span>
+                        { Math.round(props.forcastData.wind_gust * 3.6) } <span className='unit'>km/s</span>
                     </div>
                 </div>
                 <div className='col-6'>
