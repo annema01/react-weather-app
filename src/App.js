@@ -19,7 +19,7 @@ function App() {
 
   function handleResponse(response) {
 
-    console.log(response.data);
+    //console.log(response.data);
     let rain = response.data.rain && response.data.rain[ "1h" ];
     if (rain === undefined) {
       rain = "-";
@@ -100,7 +100,7 @@ function App() {
   function success(position) {
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
-    console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
+    //console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${unit}`
 
     axios.get(apiUrl).then(handleResponse);

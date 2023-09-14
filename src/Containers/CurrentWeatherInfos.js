@@ -20,6 +20,16 @@ export default function CurrentWeatherInfos(props) {
         backgroundSize: "90%"
     }
 
+    function fontSizeChange() {
+
+        let string = `${props.city}${props.country}`;
+        if (string.length > 12) {
+            return "positionLong";
+        }
+        else {
+            return "positionNormal";
+        }
+    }
 
     return (
         <div className="currentWeather" style={ currentWeatherImgStyle } >
@@ -36,7 +46,7 @@ export default function CurrentWeatherInfos(props) {
             </div>
 
             <div className="positionTime">
-                <div className="position">
+                <div className={ `${fontSizeChange()}` }>
                     <a onClick={ props.handleGeolocation } href="/" className="btn geoButton">
                         <i className="bi bi-geo-alt"></i>
                     </a>

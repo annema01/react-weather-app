@@ -16,7 +16,7 @@ export default function Forcast(props) {
   let day = [ "day1", "day2", "day3", "day4", "day5" ]
 
   function handleResponse(response) {
-    console.log(response.data.daily);
+    // console.log(response.data.daily);
     setForcast(response.data.daily);
     setLoaded(true);
   }

@@ -228,27 +228,37 @@ textarea {
   text-shadow: var(--text-shadow);
 }
 
-.Weather .position {
+.Weather .positionNormal,
+.Weather .positionLong {
   padding: 65px 0 0;
   display: flex;
   align-items: center;
-  font-size: 30px;
   font-weight: 500;
   line-height: 1;
+}
+
+.Weather .positionNormal {
+  font-size: 30px;
+}
+
+.Weather .positionLong {
+  font-size: 27px;
 }
 
 .Weather .time {
   font-style: italic;
   color: var(--primary-color);
-  font-size: 10px;
-  padding-left: 30px;
+  font-size: 13px;
+  padding: 7px 0 0 30px;
 }
 
-.Weather .position a {
+.Weather .positionNormal a,
+.Weather .positionLong a {
   padding: 0 5px 0 0;
 }
 
-.Weather .position i {
+.Weather .positionNormal i,
+.Weather .positionLong i {
   font-size: 26px;
   display: block;
 }
@@ -308,14 +318,15 @@ textarea {
     height: 700px;
   }
 
-  .Weather .position {
+  .Weather .positionNormal {
     font-size: 42px;
   }
 
-  .Weather .time {
-    font-size: 15px;
-    padding-top: 10px;
+  .Weather .positionLong {
+    font-size: 30px;
   }
+
+
 
   .Weather .currentWeather .degree {
     font-size: 205px;
