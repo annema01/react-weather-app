@@ -6,6 +6,8 @@ import axios from "axios";
 
 import ForcastDay from "../Components/ForcastDay";
 
+import { RotatingLines } from "react-loader-spinner";
+
 
 
 export default function Forcast(props) {
@@ -47,7 +49,15 @@ export default function Forcast(props) {
                 </div>
               );
             } else {
-              return null;
+              <div className="col d-flex justify-content-center pt-4">
+                <RotatingLines
+                  strokeColor="#017eff"
+                  strokeWidth="2"
+                  animationDuration="1.5"
+                  width="96"
+                  visible={ true }
+                />
+              </div>
             }
           }) }
         </div>

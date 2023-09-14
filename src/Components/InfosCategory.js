@@ -4,7 +4,7 @@ export default function InfosCategory(props) {
 
 
     if (props.infoType === undefined) {
-        return;
+        return null;
     } else {
         if (props.title === "Wind speed") {
             return (

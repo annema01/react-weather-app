@@ -44,7 +44,6 @@ function App() {
       date: new Date(response.data.dt * 1000),
       timezone: response.data.timezone,
       //infos
-      airQuality: "airQua", //need the air polution api
       humidity: response.data.main.humidity,
       windSpeed: response.data.wind.speed,
       windDeg: response.data.wind.deg,
