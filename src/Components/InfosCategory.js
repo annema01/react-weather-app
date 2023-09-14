@@ -6,7 +6,7 @@ export default function InfosCategory(props) {
 
 
 
-    if (props.infoType === undefined || props.infoType === NaN) {
+    if (props.infoType === undefined || isNaN(props.infoType)) {
         return null;
     } else {
         if (props.title === "Wind speed") {
