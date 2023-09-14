@@ -19,7 +19,7 @@ function App() {
 
   function handleResponse(response) {
 
-    //console.log(response.data);
+    console.log(response.data);
     let rain = response.data.rain && response.data.rain[ "1h" ];
     if (rain === undefined) {
       rain = "-";

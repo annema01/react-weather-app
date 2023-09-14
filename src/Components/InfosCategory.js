@@ -3,7 +3,10 @@ import React from "react";
 export default function InfosCategory(props) {
 
 
-    if (props.infoType === undefined) {
+
+
+
+    if (props.infoType === undefined || props.infoType === NaN) {
         return null;
     } else {
         if (props.title === "Wind speed") {
