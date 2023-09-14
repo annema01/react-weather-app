@@ -111,8 +111,10 @@ function App() {
     event.preventDefault();
     navigator.geolocation.getCurrentPosition(success);
   }
+
   useEffect(() => {
     changeToNightTheme("#173459", "#3C6AA6", "#161616", "#33396D");
+    // eslint-disable-next-line
   }, [ weatherData.icon ]);
 
   function changeToNightTheme(primary, secondary, text, primaryBackground) {

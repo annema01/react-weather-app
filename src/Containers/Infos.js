@@ -34,7 +34,6 @@ export default function Infos(props) {
             title={ "Humidity" }
             dataType={ "integer" }
             unit={ "%" }
-            iconStyle={ props.iconStyle }
           />
 
           <InfosCategory
@@ -44,7 +43,6 @@ export default function Infos(props) {
             dataType={ "integer" }
             unit={ "km/s" }
             windDeg={ props.data.windDeg }
-            iconStyle={ props.iconStyle }
 
           />
 
@@ -55,11 +53,10 @@ export default function Infos(props) {
             title={ "Wind gust" }
             dataType={ "integer" }
             unit={ "km/s" }
-            iconStyle={ props.iconStyle }
 
           />
 
-          <InfosCategoryPrecipitation snow={ props.data.snow } rain={ props.data.rain } iconStyle={ props.iconStyle } />
+          <InfosCategoryPrecipitation snow={ props.data.snow } rain={ props.data.rain } />
 
           <InfosCategory
             infoType={ props.data.pressure * 0.1 }
@@ -67,7 +64,6 @@ export default function Infos(props) {
             title={ "Pressure" }
             dataType={ "integer" }
             unit={ "kPa" }
-            iconStyle={ props.iconStyle }
 
           />
           <InfosCategoryVisibility
@@ -76,7 +72,6 @@ export default function Infos(props) {
             title={ "Visibility" }
             dataType={ "integer" }
             unit={ "km" }
-            iconStyle={ props.iconStyle }
 
           />
           <InfosCategory
@@ -85,7 +80,6 @@ export default function Infos(props) {
             title={ "Clouds" }
             dataType={ "integer" }
             unit={ "%" }
-            iconStyle={ props.iconStyle }
 
           />
           <InfosCategoryTime
@@ -96,7 +90,6 @@ export default function Infos(props) {
             unit={ "" }
             sunrise={ props.data.sunrise }
             timezone={ props.data.timezone }
-            iconStyle={ props.iconStyle }
 
           />
 
@@ -108,7 +101,6 @@ export default function Infos(props) {
             unit={ "" }
             sunset={ props.data.sunset }
             timezone={ props.data.timezone }
-            iconStyle={ props.iconStyle }
 
           />
 

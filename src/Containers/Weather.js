@@ -63,7 +63,7 @@ export default function Weather(props) {
           </div>
         </div>
         <div>
-          <Infos data={ props.weatherData } iconStyle={ props.iconStyle } />
+          <Infos data={ props.weatherData } />
         </div>
       </div>
     );
