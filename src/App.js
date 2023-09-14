@@ -77,8 +77,6 @@ function App() {
   function search() {
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`;
     axios.get(apiUrl).then(handleResponse);
-
-
   }
 
   useEffect(() => {
@@ -99,6 +97,20 @@ function App() {
     setUnit("metric");
   }
 
+  function success(position) {
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
+    console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${unit}`
+
+    axios.get(apiUrl).then(handleResponse);
+  }
+
+  function handleGeolocation(event) {
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition(success);
+  }
+
 
   return (
     <div className="App g-0">
@@ -111,6 +123,7 @@ function App() {
             showFahrenheit={ showFahrenheit }
             showCelcius={ showCelcius }
             unit={ unit }
+            handleGeolocation={ handleGeolocation }
           />
         </div>
         <div className=" col-md-5 g-0 forcastSection">

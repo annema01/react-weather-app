@@ -1,6 +1,9 @@
 import React from "react";
 
+
+
 import { renderToString } from 'react-dom/server';
+
 
 import FormatedTimezone from "../Components/FormatedTimezone";
 import CurrentWeatherImages from "../Components/CurrentWeatherImages";
@@ -16,6 +19,8 @@ export default function CurrentWeatherInfos(props) {
         backgroundPosition: "right 10px top 25px",
         backgroundSize: "90%"
     }
+
+
     return (
         <div className="currentWeather" style={ currentWeatherImgStyle } >
             <div className="degree">
@@ -32,7 +37,7 @@ export default function CurrentWeatherInfos(props) {
 
             <div className="positionTime">
                 <div className="position">
-                    <a href="/" className="btn geoButton">
+                    <a onClick={ props.handleGeolocation } href="/" className="btn geoButton">
                         <i className="bi bi-geo-alt"></i>
                     </a>
                     <div className="city">

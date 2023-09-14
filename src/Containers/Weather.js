@@ -56,6 +56,8 @@ export default function Weather(props) {
                 city={ props.weatherData.city }
                 country={ props.weatherData.country }
                 timezone={ props.weatherData.timezone }
+                handleGeolocation={ props.handleGeolocation }
+
               />
             </div>
           </div>
