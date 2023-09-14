@@ -53,7 +53,14 @@ export default function ForcastDay(props) {
 
     }
 
-
+    function iconColor(icon) {
+        icon = forcastIcon();
+        if (icon === "sun") {
+            return "yellow";
+        } else {
+            return "blue"
+        }
+    }
     return (
         <div className='Forcast'>
 
@@ -67,7 +74,7 @@ export default function ForcastDay(props) {
                     aria-controls={ props.collapse }>
 
                     <div className='weekDay col-6 fullText'>{ day() }</div>
-                    <i className={ `icon blue bi bi-${forcastIcon()}-fill col` }></i>
+                    <i className={ `icon ${iconColor()} bi bi-${forcastIcon()}-fill col` }></i>
                     <div className='minMax col' >
                         <div className='min'>{ minTemperature() }</div><span className="shortText">/</span>
                         <strong className='max'>{ maxTemperature() }</strong>
