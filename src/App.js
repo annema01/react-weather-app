@@ -40,7 +40,9 @@ function App() {
       city: response.data.name,
       country: response.data.sys.country,
       description: response.data.weather[ 0 ].description,
-      icon: response.data.weather[ 0 ].icon,
+      //icon: response.data.weather[ 0 ].icon,
+      icon: "01n",
+
       date: new Date(response.data.dt * 1000),
       timezone: response.data.timezone,
       //infos
@@ -100,7 +102,6 @@ function App() {
   function success(position) {
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
-    //console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${unit}`
 
     axios.get(apiUrl).then(handleResponse);
@@ -110,7 +111,31 @@ function App() {
     event.preventDefault();
     navigator.geolocation.getCurrentPosition(success);
   }
+  useEffect(() => {
+    changeToNightTheme("#173459", "#3C6AA6", "#161616", "#33396D");
+  }, [ weatherData.icon ]);
 
+  function changeToNightTheme(primary, secondary, text, primaryBackground) {
+
+    let iconCodeWithNoDigits = weatherData.icon.replace(/\d+/g, '');
+    console.log(iconCodeWithNoDigits);
+
+    if (iconCodeWithNoDigits === "n") {
+      document.documentElement.style.setProperty('--primary-color', primary);
+      document.documentElement.style.setProperty('--secondary-color', secondary);
+      document.documentElement.style.setProperty('--text-color', text);
+      document.documentElement.style.setProperty('--primary-background-color', primaryBackground);
+      document.documentElement.style.setProperty('--gradient-vertical', secondary);
+      replaceIconNightStyle("iconNight");
+    }
+    else {
+      replaceIconNightStyle("iconDay");
+    }
+  }
+
+  function replaceIconNightStyle(style) {
+    return style;
+  }
 
   return (
     <div className="App g-0">

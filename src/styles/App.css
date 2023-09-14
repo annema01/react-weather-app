@@ -2,6 +2,7 @@
   --primary-color: #017eff;
   --secondary-color: #01afff;
   --background-color: #f2f9ff;
+  --primary-background-color: #cff4ff;
   --white-color: #fcfefe;
   --text-color: #3d3d3d;
   --light-text-color: #9cc4dd;
@@ -17,6 +18,12 @@
   --font-integer: "Archivo", sans-serif;
   /*Installed weight : 400 500 700 900*/
 }
+
+/* Night theme
+ primary: #173459;
+ secondary: #3C6AA6;
+ text: #161616;
+*/
 
 
 
@@ -62,7 +69,7 @@
   .App .contentAll {
     margin: 64px auto 50px;
     max-width: 1040px;
-    background: linear-gradient(180deg, #cff4ff 0%, var(--background-color) 100%);
+    background: linear-gradient(180deg, var(--primary-background-color) 0%, var(--background-color) 100%);
     border-radius: 10px 10px 0 0;
   }
 

@@ -24,12 +24,20 @@
   display: none;
 }
 
-.Infos .icon {
+.Infos .iconDay,
+.Infos .iconNight {
   font-size: 48px;
+  padding-bottom: 25px;
+}
+
+.Infos .iconDay {
   background-image: var(--gradient-vertical);
   background-clip: text;
   color: transparent;
-  padding-bottom: 25px;
+}
+
+.Infos .iconNight {
+  color: #3C6AA6;
 }
 
 .Infos .title {
@@ -90,13 +98,14 @@
     padding: 0 60px;
   }
 
-  .Infos .icon {
+  .Infos .iconDay,
+  .Infos .iconNight {
     font-size: 24px;
-    background-image: var(--gradient-vertical);
-    background-clip: text;
-    color: transparent;
     padding-bottom: 25px;
+
   }
+
+
 
   .Infos .title {
     font-size: 10px;
