@@ -24,21 +24,15 @@
   display: none;
 }
 
-.Infos .iconDay,
-.Infos .iconNight {
+.Infos .icon {
   font-size: 48px;
   padding-bottom: 25px;
-}
-
-.Infos .iconDay {
   background-image: var(--gradient-vertical);
   background-clip: text;
   color: transparent;
 }
 
-.Infos .iconNight {
-  color: #3C6AA6;
-}
+
 
 .Infos .title {
   font-size: 15px;
@@ -98,8 +92,7 @@
     padding: 0 60px;
   }
 
-  .Infos .iconDay,
-  .Infos .iconNight {
+  .Infos .icon {
     font-size: 24px;
     padding-bottom: 25px;
 

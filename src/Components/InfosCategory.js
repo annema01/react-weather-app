@@ -12,7 +12,7 @@ export default function InfosCategory(props) {
         if (props.title === "Wind speed") {
             return (
                 <div className='col-6 col-md-4'>
-                    <i className={ `iconDay bi bi-${props.icon}` }></i>
+                    <i className={ `icon bi bi-${props.icon}` }></i>
                     <div className='title'>{ props.title }</div>
                     <div className={ `data ${props.dataType}` }>
                         <div>
@@ -34,7 +34,7 @@ export default function InfosCategory(props) {
         } else {
             return (
                 <div className='col-6 col-md-4'>
-                    <i className={ `iconDay bi bi-${props.icon}` }></i>
+                    <i className={ `icon bi bi-${props.icon}` }></i>
                     <div className='title'>{ props.title }</div>
                     <div className={ `data ${props.dataType}` }>
                         { Math.round(props.infoType) }<span className='unit'>{ props.unit }</span>

@@ -112,32 +112,33 @@ function App() {
     navigator.geolocation.getCurrentPosition(success);
   }
 
-  useEffect(() => {
-    changeToNightTheme("#173459", "#3C6AA6", "#161616", "#33396D");
-    // eslint-disable-next-line
-  }, [ weatherData.icon ]);
+
 
   function changeToNightTheme(primary, secondary, text, primaryBackground) {
+    if (weatherData.ready) {
+      let iconCodeWithNoDigits = weatherData.icon.replace(/\d+/g, '');
+      console.log(iconCodeWithNoDigits);
 
-    let iconCodeWithNoDigits = weatherData.icon.replace(/\d+/g, '');
-    console.log(iconCodeWithNoDigits);
-
-    if (iconCodeWithNoDigits === "n") {
-      document.documentElement.style.setProperty('--primary-color', primary);
-      document.documentElement.style.setProperty('--secondary-color', secondary);
-      document.documentElement.style.setProperty('--text-color', text);
-      document.documentElement.style.setProperty('--primary-background-color', primaryBackground);
-      document.documentElement.style.setProperty('--gradient-vertical', secondary);
-      replaceIconNightStyle("iconNight");
+      if (iconCodeWithNoDigits === "n") {
+        document.documentElement.style.setProperty('--primary-color', primary);
+        document.documentElement.style.setProperty('--secondary-color', secondary);
+        document.documentElement.style.setProperty('--text-color', text);
+        document.documentElement.style.setProperty('--primary-background-color', primaryBackground);
+        document.documentElement.style.setProperty('--gradient-vertical', secondary);
+      }
+      else {
+        return null;
+      }
     }
     else {
-      replaceIconNightStyle("iconDay");
+      return null;
     }
   }
+  useEffect(() => {
+    changeToNightTheme("#173459", "#3C6AA6", "#161616", "#33396D");
+    // eslint-disable-next-line 
+  }, [ weatherData.icon ]);
 
-  function replaceIconNightStyle(style) {
-    return style;
-  }
 
   return (
     <div className="App g-0">

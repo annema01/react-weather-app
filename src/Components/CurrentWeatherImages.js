@@ -2,10 +2,10 @@
 export default function CurrentWeatherImages(props) {
     const codeMapping = {
         "01d": "sunny",
-        "01n": "sunny",
+        "01n": "moon_full",
         "02d": "partlyCloudy",
-        "02n": "partlyCloudy",
-        "03d": "partlyCloudy",
+        "02n": "partlyCloudy_moon_full",
+        "03d": "partlyCloudy_moon_full",
         "03n": "partlyCloudy",
         "04d": "cloudy",
         "04n": "cloudy",
