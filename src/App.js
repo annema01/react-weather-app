@@ -63,16 +63,8 @@ function App() {
 
   }
 
-  function handleError(code) {
 
-    if (code === 404) {
-      setCity("Montreal")
-      prompt("error")
-    }
-    else {
-      return null;
-    }
-  }
+
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -83,7 +75,6 @@ function App() {
   }
 
   function search() {
-    handleError(weatherData.error);
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`;
     axios.get(apiUrl).then(handleResponse);
 
