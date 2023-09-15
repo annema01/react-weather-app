@@ -11,7 +11,8 @@ import CurrentWeatherImages from "../Components/CurrentWeatherImages";
 
 export default function CurrentWeatherInfos(props) {
 
-    let backgroundImage = renderToString(<CurrentWeatherImages icon={ props.icon } />);
+    let backgroundImage = renderToString(<CurrentWeatherImages icon={ props.icon } apiKey={ props.apiKey } longitude={ props.longitude }
+        latitude={ props.latitude } />);
 
     let currentWeatherImgStyle = {
         backgroundImage: `url(/backgroundImages/${backgroundImage}.svg)`,

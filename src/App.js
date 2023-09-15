@@ -14,6 +14,8 @@ function App() {
   const [ weatherData, setWeatherData ] = useState({ ready: false }); // ready used to be a state but it was put as another data from the WeatherData
   const [ city, setCity ] = useState("montreal");
   const [ unit, setUnit ] = useState("metric");
+  //const [ moonPhase, setMoonPhase ] = useState("");
+
 
   const apiKey = "aa09763d916df0424c840d55bfc2d2c9";
 
@@ -65,7 +67,9 @@ function App() {
 
   }
 
-
+  // function handleResponseMoophase(response) {
+  //   setMoonPhase(response.data.daily[ 0 ].moon_phase);
+  // }
 
 
   function handleSubmit(event) {
@@ -81,6 +85,16 @@ function App() {
     axios.get(apiUrl).then(handleResponse);
   }
 
+
+
+  // function searchMoonPhase() {
+  //   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${weatherData.latitude}&lon=${weatherData.longitude}&appid=${apiKey}`
+  //   axios.get(apiUrl).then(handleResponseMoophase);
+  // }
+  // useEffect(() => {
+  //   searchMoonPhase();
+  // }, [ weatherData.longitude ]);
+
   useEffect(() => {
     //code i want to run
     search();
@@ -88,6 +102,8 @@ function App() {
     // return function (optionnal)
     // eslint-disable-next-line
   }, [ unit ]); //dependency array
+
+
 
   function showFahrenheit(event) {
     event.preventDefault();
@@ -152,6 +168,8 @@ function App() {
             showCelcius={ showCelcius }
             unit={ unit }
             handleGeolocation={ handleGeolocation }
+            apiKey={ apiKey }
+
           />
         </div>
         <div className=" col-md-5 g-0 forcastSection">
