@@ -6,6 +6,15 @@ import FormatedTimezone from "../Components/FormatedTimezone";
 import CurrentWeatherImages from "../Components/CurrentWeatherImages";
 
 export default function CurrentWeatherInfos(props) {
+  function fontSizeChange() {
+    let string = `${props.city}${props.country}`;
+    if (string.length > 12) {
+      return "positionLong";
+    } else {
+      return "positionNormal";
+    }
+  }
+
   let backgroundImage = renderToString(
     <CurrentWeatherImages
       icon={props.icon}
@@ -22,15 +31,6 @@ export default function CurrentWeatherInfos(props) {
     backgroundPosition: "right 10px top 25px",
     backgroundSize: "90%",
   };
-
-  function fontSizeChange() {
-    let string = `${props.city}${props.country}`;
-    if (string.length > 12) {
-      return "positionLong";
-    } else {
-      return "positionNormal";
-    }
-  }
 
   return (
     <div className="currentWeather" style={currentWeatherImgStyle}>
