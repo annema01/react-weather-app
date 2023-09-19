@@ -6,6 +6,8 @@ Refactoring:
 Feature to add:
 
     - Error pop up if the data entered returns Not found
-    - add air polution API (using the coords)
-    - Localisation button
+
+
     - Night icons (find a way to color diff. part of svg?)
+        - switch between moon phases
+        - remake css root for most colors (and create a night version to add to the converting function)
