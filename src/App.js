@@ -154,6 +154,9 @@ function App() {
             apiKey={apiKey}
           />
         </div>
+
+        <div className="TEMPORAIRE"></div>
+
         <Footer />
       </div>
       <a href="#scrollUp" className="btn scrollUp">
