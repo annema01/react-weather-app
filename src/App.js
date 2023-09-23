@@ -7,6 +7,8 @@ import Footer from "./Containers/Footer";
 
 import axios from "axios";
 
+import images from "./public/backgroundImages/fog.svg";
+
 function App() {
   const [weatherData, setWeatherData] = useState({ ready: false }); // ready used to be a state but it was put as another data from the WeatherData
   const [city, setCity] = useState("montreal");
@@ -135,6 +137,7 @@ function App() {
     <div className="App g-0">
       <div className="row g-0 contentAll">
         <div className="col-md-7">
+          <img className="TEMPORAIRE" src={images}>
           <Weather
             weatherData={weatherData}
             handleSubmit={handleSubmit}
@@ -154,8 +157,6 @@ function App() {
             apiKey={apiKey}
           />
         </div>
-
-        <div className="TEMPORAIRE"></div>
 
         <Footer />
       </div>
