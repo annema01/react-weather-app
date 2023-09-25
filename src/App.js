@@ -7,22 +7,21 @@ import Footer from "./Containers/Footer";
 
 import axios from "axios";
 
-import images from "./public/backgroundImages/fog.svg";
 
 function App() {
-  const [weatherData, setWeatherData] = useState({ ready: false }); // ready used to be a state but it was put as another data from the WeatherData
-  const [city, setCity] = useState("montreal");
-  const [unit, setUnit] = useState("metric");
+  const [ weatherData, setWeatherData ] = useState({ ready: false }); // ready used to be a state but it was put as another data from the WeatherData
+  const [ city, setCity ] = useState("montreal");
+  const [ unit, setUnit ] = useState("metric");
 
   const apiKey = "aa09763d916df0424c840d55bfc2d2c9";
 
   function handleResponse(response) {
     console.log(response.data);
-    let rain = response.data.rain && response.data.rain["1h"];
+    let rain = response.data.rain && response.data.rain[ "1h" ];
     if (rain === undefined) {
       rain = "-";
     }
-    let snow = response.data.snow && response.data.snow["1h"];
+    let snow = response.data.snow && response.data.snow[ "1h" ];
     if (snow === undefined) {
       snow = "-";
     }
@@ -36,7 +35,7 @@ function App() {
       max: response.data.main.temp_max,
       city: response.data.name,
       country: response.data.sys.country,
-      description: response.data.weather[0].description,
+      description: response.data.weather[ 0 ].description,
       //icon: response.data.weather[0].icon,
       icon: "03n",
 
@@ -76,7 +75,7 @@ function App() {
   useEffect(() => {
     search();
     // eslint-disable-next-line
-  }, [unit]); //dependency array
+  }, [ unit ]); //dependency array
 
   function showFahrenheit(event) {
     event.preventDefault();
@@ -131,30 +130,32 @@ function App() {
   useEffect(() => {
     changeToNightTheme("#173459", "#3C6AA6", "#161616", "#33396D");
     // eslint-disable-next-line
-  }, [weatherData.ready]);
+  }, [ weatherData.ready ]);
 
   return (
     <div className="App g-0">
       <div className="row g-0 contentAll">
         <div className="col-md-7">
-          <img className="TEMPORAIRE" src={images}>
+
+          <img src={ process.env.PUBLIC_URL + '/backgroundImages/partlyCloudy_moon_waningGibous.svg' } className="TEMPORAIRE" />
+
           <Weather
-            weatherData={weatherData}
-            handleSubmit={handleSubmit}
-            handleCityChange={handleCityChange}
-            showFahrenheit={showFahrenheit}
-            showCelcius={showCelcius}
-            unit={unit}
-            handleGeolocation={handleGeolocation}
-            apiKey={apiKey}
+            weatherData={ weatherData }
+            handleSubmit={ handleSubmit }
+            handleCityChange={ handleCityChange }
+            showFahrenheit={ showFahrenheit }
+            showCelcius={ showCelcius }
+            unit={ unit }
+            handleGeolocation={ handleGeolocation }
+            apiKey={ apiKey }
           />
         </div>
         <div className=" col-md-5 g-0 forcastSection">
           <Forcast
-            longitude={weatherData.longitude}
-            latitude={weatherData.latitude}
-            unit={unit}
-            apiKey={apiKey}
+            longitude={ weatherData.longitude }
+            latitude={ weatherData.latitude }
+            unit={ unit }
+            apiKey={ apiKey }
           />
         </div>
 
