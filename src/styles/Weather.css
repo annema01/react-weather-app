@@ -218,9 +218,7 @@ textarea {
 
 
 .Weather .currentWeather i {
-  background-image: var(--gradient-vertical);
-  background-clip: text;
-  color: transparent;
+  color: var(--icon-color);
 }
 
 /*  POSITION */

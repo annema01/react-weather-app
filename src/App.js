@@ -36,7 +36,7 @@ function App() {
       city: response.data.name,
       country: response.data.sys.country,
       description: response.data.weather[ 0 ].description,
-      //icon: response.data.weather[0].icon,
+      //icon: response.data.weather[ 0 ].icon,
       icon: "03n",
 
       date: new Date(response.data.dt * 1000),
@@ -107,19 +107,13 @@ function App() {
 
       if (iconCodeWithNoDigits === "n") {
         document.documentElement.style.setProperty("--primary-color", primary);
-        document.documentElement.style.setProperty(
-          "--secondary-color",
-          secondary
-        );
+        document.documentElement.style.setProperty("--secondary-color", secondary);
         document.documentElement.style.setProperty("--text-color", text);
-        document.documentElement.style.setProperty(
-          "--primary-background-color",
-          primaryBackground
-        );
-        document.documentElement.style.setProperty(
-          "--gradient-vertical",
-          secondary
-        );
+        document.documentElement.style.setProperty("--primary-background-color", primaryBackground);
+        document.documentElement.style.setProperty("--gradient-vertical", secondary);
+        document.documentElement.style.setProperty("--icon-color", secondary);
+        document.documentElement.style.setProperty("--unit-text-color", primary);
+
       } else {
         return null;
       }
@@ -137,7 +131,6 @@ function App() {
       <div className="row g-0 contentAll">
         <div className="col-md-7">
 
-          <img src={ process.env.PUBLIC_URL + '/backgroundImages/partlyCloudy_moon_waningGibous.svg' } className="TEMPORAIRE" />
 
           <Weather
             weatherData={ weatherData }

@@ -1,15 +1,24 @@
 :root {
   --primary-color: #017eff;
   --secondary-color: #01afff;
+
   --background-color: #f2f9ff;
   --primary-background-color: #cff4ff;
+
+  /*Principal use for text color */
   --white-color: #fcfefe;
   --text-color: #3d3d3d;
   --light-text-color: #9cc4dd;
+  --unit-text-color: #9cc4dd;
+
+  --icon-color: #01aee4;
+
+  /*Gradients */
   --gradient: linear-gradient(270deg, #4ad4de 0%, #01aee4 100%);
   --gradient-vertical: linear-gradient(#01aee4 0%, #4ad4de 100%);
   --gradient-svg: linear-gradient(to bottom, #01aee4, #4ad4de);
 
+  /*Shadoes*/
   --element-shadow: 0px 4px 4px rgba(0, 43, 87, 0.2);
   --text-shadow: 0px 2px 3px rgba(0, 43, 87, 0.2);
 
@@ -23,6 +32,9 @@
  primary: #173459;
  secondary: #3C6AA6;
  text: #161616;
+ icon-clip: border-box;
+ icon-color: #173459;
+ background-image (icons) : none;
 */
 
 
