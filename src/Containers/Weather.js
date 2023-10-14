@@ -55,6 +55,7 @@ export default function Weather(props) {
                 apiKey={props.apiKey}
                 longitude={props.weatherData.longitude}
                 latitude={props.weatherData.latitude}
+                moonPhase={props.moonPhase}
               />
             </div>
           </div>

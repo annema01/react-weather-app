@@ -21,7 +21,8 @@ export default function CurrentWeatherInfos(props) {
       apiKey={props.apiKey}
       longitude={props.longitude}
       latitude={props.latitude}
-      weatherData={props.weatherData}
+      weatherDataReady={props.ready}
+      moonPhase={props.moonPhase}
     />
   );
 

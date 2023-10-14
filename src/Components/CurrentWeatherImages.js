@@ -3,7 +3,9 @@ import CurrentMoonPhase from "../Components/CurrentMoonPhase";
 import { renderToString } from "react-dom/server";
 
 export default function CurrentWeatherImages(props) {
-  let moonPhase = renderToString(<CurrentMoonPhase longitude={ props.longitude } />);
+  let moonPhase = renderToString(
+    <CurrentMoonPhase moonPhase={props.moonPhase} longitude={props.longitude} />
+  );
   const codeMapping = {
     "01d": "sunny",
     "01n": `${moonPhase}`,
@@ -29,7 +31,7 @@ export default function CurrentWeatherImages(props) {
     "50n": "fog",
   };
 
-  let image = codeMapping[ props.icon ];
+  let image = codeMapping[props.icon];
 
   return image;
 }

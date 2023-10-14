@@ -7,21 +7,22 @@ import Footer from "./Containers/Footer";
 
 import axios from "axios";
 
-
 function App() {
-  const [ weatherData, setWeatherData ] = useState({ ready: false }); // ready used to be a state but it was put as another data from the WeatherData
-  const [ city, setCity ] = useState("montreal");
-  const [ unit, setUnit ] = useState("metric");
+  const [weatherData, setWeatherData] = useState({ ready: false }); // ready used to be a state but it was put as another data from the WeatherData
+  const [city, setCity] = useState("montreal");
+  const [unit, setUnit] = useState("metric");
 
   const apiKey = "aa09763d916df0424c840d55bfc2d2c9";
 
   function handleResponse(response) {
-    console.log(response.data);
-    let rain = response.data.rain && response.data.rain[ "1h" ];
+    // console.log(response.data);
+    // console.log(response.data.weather[0].icon);
+
+    let rain = response.data.rain && response.data.rain["1h"];
     if (rain === undefined) {
       rain = "-";
     }
-    let snow = response.data.snow && response.data.snow[ "1h" ];
+    let snow = response.data.snow && response.data.snow["1h"];
     if (snow === undefined) {
       snow = "-";
     }
@@ -35,8 +36,8 @@ function App() {
       max: response.data.main.temp_max,
       city: response.data.name,
       country: response.data.sys.country,
-      description: response.data.weather[ 0 ].description,
-      //icon: response.data.weather[ 0 ].icon,
+      description: response.data.weather[0].description,
+      //icon: response.data.weather[0].icon,
       icon: "03n",
 
       date: new Date(response.data.dt * 1000),
@@ -75,7 +76,7 @@ function App() {
   useEffect(() => {
     search();
     // eslint-disable-next-line
-  }, [ unit ]); //dependency array
+  }, [unit]); //dependency array
 
   function showFahrenheit(event) {
     event.preventDefault();
@@ -94,6 +95,26 @@ function App() {
 
     axios.get(apiUrl).then(handleResponse);
   }
+  const [moonPhase, setMoonPhase] = useState(2);
+
+  function handleResponseMoophase(response) {
+    setMoonPhase(response.data.daily[0].moon_phase);
+    console.log(`moon: ${moonPhase}`);
+  }
+  // const moonPhase = handleResponseMoophase();
+
+  function searchMoonPhase() {
+    if (weatherData.ready) {
+      const latitude = weatherData.latitude;
+      const longitude = weatherData.longitude;
+      let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${unit}`;
+      axios.get(apiUrl).then(handleResponseMoophase);
+    }
+  }
+  useEffect(() => {
+    searchMoonPhase();
+    // eslint-disable-next-line
+  }, [weatherData.latitude]);
 
   function handleGeolocation(event) {
     event.preventDefault();
@@ -107,13 +128,24 @@ function App() {
 
       if (iconCodeWithNoDigits === "n") {
         document.documentElement.style.setProperty("--primary-color", primary);
-        document.documentElement.style.setProperty("--secondary-color", secondary);
+        document.documentElement.style.setProperty(
+          "--secondary-color",
+          secondary
+        );
         document.documentElement.style.setProperty("--text-color", text);
-        document.documentElement.style.setProperty("--primary-background-color", primaryBackground);
-        document.documentElement.style.setProperty("--gradient-vertical", secondary);
+        document.documentElement.style.setProperty(
+          "--primary-background-color",
+          primaryBackground
+        );
+        document.documentElement.style.setProperty(
+          "--gradient-vertical",
+          secondary
+        );
         document.documentElement.style.setProperty("--icon-color", secondary);
-        document.documentElement.style.setProperty("--unit-text-color", primary);
-
+        document.documentElement.style.setProperty(
+          "--unit-text-color",
+          primary
+        );
       } else {
         return null;
       }
@@ -124,31 +156,30 @@ function App() {
   useEffect(() => {
     changeToNightTheme("#173459", "#3C6AA6", "#161616", "#33396D");
     // eslint-disable-next-line
-  }, [ weatherData.ready ]);
+  }, [weatherData.ready]);
 
   return (
     <div className="App g-0">
       <div className="row g-0 contentAll">
         <div className="col-md-7">
-
-
           <Weather
-            weatherData={ weatherData }
-            handleSubmit={ handleSubmit }
-            handleCityChange={ handleCityChange }
-            showFahrenheit={ showFahrenheit }
-            showCelcius={ showCelcius }
-            unit={ unit }
-            handleGeolocation={ handleGeolocation }
-            apiKey={ apiKey }
+            weatherData={weatherData}
+            handleSubmit={handleSubmit}
+            handleCityChange={handleCityChange}
+            showFahrenheit={showFahrenheit}
+            showCelcius={showCelcius}
+            unit={unit}
+            handleGeolocation={handleGeolocation}
+            apiKey={apiKey}
+            moonPhase={moonPhase}
           />
         </div>
         <div className=" col-md-5 g-0 forcastSection">
           <Forcast
-            longitude={ weatherData.longitude }
-            latitude={ weatherData.latitude }
-            unit={ unit }
-            apiKey={ apiKey }
+            longitude={weatherData.longitude}
+            latitude={weatherData.latitude}
+            unit={unit}
+            apiKey={apiKey}
           />
         </div>
 
