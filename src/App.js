@@ -37,8 +37,7 @@ function App() {
       city: response.data.name,
       country: response.data.sys.country,
       description: response.data.weather[0].description,
-      //icon: response.data.weather[0].icon,
-      icon: "03n",
+      icon: response.data.weather[0].icon,
 
       date: new Date(response.data.dt * 1000),
       timezone: response.data.timezone,
